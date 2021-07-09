@@ -1,5 +1,4 @@
 {
 	"sharedassets": "*.*",
-	"type": "game",
-	"ident": "gman.sboxplusplus"
+	"ident": "gman.sbox"
 }
