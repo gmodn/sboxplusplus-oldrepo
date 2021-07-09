@@ -1,6 +1,5 @@
 ﻿using Sandbox;
 using System;
-using Sandbox.UI;
 
 [Library( "ent_radio", Title = "Radio", Spawnable = true )]
 public partial class RadioEntity : Prop, IUse
@@ -20,12 +19,12 @@ public partial class RadioEntity : Prop, IUse
 	{
 		return true;
 	}
-//TODO Make it toggle s&box song
+
 	public bool OnUse( Entity user )
 	{
 		if ( user is Player player )
 		{
-			PlaySound("sboxsong")
+			PlaySound( "sboxsong" );
 		}
 
 		return false;
