@@ -25,7 +25,7 @@ partial class Sexyness : Weapon
 
 		//
 		// Tell the clients to play the shoot effects
-		//
+		//WWWWWWWWWWWWWWW
 		ShootEffects();
 		PlaySound( "rust_smg.shoot" );
 
@@ -33,6 +33,9 @@ partial class Sexyness : Weapon
 		// Shoot the bullets
 		//
 		ShootBullet( 0.0f, 100.5f, 100.0f, 3.0f );
+		
+		Owner.Velocity = Owner.EyeRot.Forward * -700;
+		
 	}
 
 	public override void AttackSecondary()

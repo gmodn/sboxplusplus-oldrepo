@@ -24,9 +24,6 @@
 				if ( !tr.Hit || !tr.Entity.IsValid() )
 					return;
 
-				if ( tr.Entity is Player )
-					return;
-
 				CreateHitEffects( tr.EndPos );
 
 				if ( tr.Entity.IsWorld )
