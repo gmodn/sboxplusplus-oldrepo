@@ -33,7 +33,7 @@ namespace Sandbox.Tools
 				if ( tr.Entity is LightEntity || tr.Entity is LampEntity )
 					return;
 
-				var scale = Math.Clamp( tr.Entity.Scale + ((0.5f * Time.Delta) * resizeDir), 0.1f, 889999.0f );
+				var scale = Math.Clamp( tr.Entity.Scale + ((0.3f * Time.Delta) * resizeDir), 0.1f, 889999.0f );
 
 				if ( tr.Entity.Scale != scale )
 				{
