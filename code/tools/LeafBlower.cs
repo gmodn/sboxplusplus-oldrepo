@@ -3,7 +3,7 @@
 	[Library( "tool_leafblower", Title = "Leaf Blower", Description = "Blow me", Group = "fun" )]
 	public partial class LeafBlowerTool : BaseTool
 	{
-		protected virtual float Force => 558;
+		protected virtual float Force => 128;
 		protected virtual float MaxDistance => 512;
 		protected virtual bool Massless => true;
 

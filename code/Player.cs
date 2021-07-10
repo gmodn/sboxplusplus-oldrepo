@@ -7,14 +7,10 @@ partial class SandboxPlayer : Player
 
 	private DamageInfo lastDamage;
 
-	[Net]
-	public PawnController VehicleController { get; set; }
-
-	[Net]
-	public Camera VehicleCamera { get; set; }
-
-	[Net]
-	public PawnAnimator VehicleAnimator { get; set; }
+	[Net] public PawnController VehicleController { get; set; }
+	[Net] public ICamera VehicleCamera { get; set; }
+	[Net] public Entity Vehicle { get; set; }
+	[Net] public ICamera MainCamera { get; set; }
 
 	public ICamera LastCamera { get; set; }
 
@@ -22,9 +18,12 @@ partial class SandboxPlayer : Player
 	{
 		Inventory = new Inventory( this );
 	}
+
 	public override void Spawn()
 	{
-		LastCamera = new FirstPersonCamera();
+		MainCamera = new FirstPersonCamera();
+		LastCamera = MainCamera;
+
 		base.Spawn();
 	}
 
@@ -34,7 +33,9 @@ partial class SandboxPlayer : Player
 
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
-		Camera = LastCamera;
+
+		MainCamera = LastCamera;
+		Camera = MainCamera;
 
 		if ( DevController is NoclipController )
 		{
@@ -61,9 +62,14 @@ partial class SandboxPlayer : Player
 	{
 		base.OnKilled();
 
+		VehicleController = null;
+		VehicleCamera = null;
+		Vehicle = null;
+
 		BecomeRagdollOnClient( Velocity, lastDamage.Flags, lastDamage.Position, lastDamage.Force, GetHitboxBone( lastDamage.HitboxIndex ) );
-		LastCamera = Camera;
-		Camera = new SpectateRagdollCamera();
+		LastCamera = MainCamera;
+		MainCamera = new SpectateRagdollCamera();
+		Camera = MainCamera;
 		Controller = null;
 
 		EnableAllCollisions = false;
@@ -94,17 +100,22 @@ partial class SandboxPlayer : Player
 
 	public override PawnController GetActiveController()
 	{
-		if ( DevController != null ) return DevController;
 		if ( VehicleController != null ) return VehicleController;
+		if ( DevController != null ) return DevController;
 
 		return base.GetActiveController();
 	}
 
 	public override PawnAnimator GetActiveAnimator()
 	{
-		if ( VehicleAnimator != null ) return VehicleAnimator;
-
 		return base.GetActiveAnimator();
+	}
+
+	public ICamera GetActiveCamera()
+	{
+		if ( VehicleCamera != null ) return VehicleCamera;
+
+		return MainCamera;
 	}
 
 	public override void Simulate( Client cl )
@@ -119,6 +130,11 @@ partial class SandboxPlayer : Player
 		if ( LifeState != LifeState.Alive )
 			return;
 
+		if ( VehicleController != null && DevController is NoclipController )
+		{
+			DevController = null;
+		}
+
 		var controller = GetActiveController();
 		if ( controller != null )
 			EnableSolidCollisions = !controller.HasTag( "noclip" );
@@ -128,15 +144,17 @@ partial class SandboxPlayer : Player
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
-			if ( Camera is not FirstPersonCamera )
+			if ( MainCamera is not FirstPersonCamera )
 			{
-				Camera = new FirstPersonCamera();
+				MainCamera = new FirstPersonCamera();
 			}
 			else
 			{
-				Camera = new ThirdPersonCamera();
+				MainCamera = new ThirdPersonCamera();
 			}
 		}
+
+		Camera = GetActiveCamera();
 
 		if ( Input.Pressed( InputButton.Drop ) )
 		{
