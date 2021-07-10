@@ -30,7 +30,7 @@
 				Rotation = Owner.EyeRot
 			};
 
-			ent.SetModel( "models/citizen_props/crate01.vmdl" );
+			ent.SetModel("models/weightedcube.vmdl");
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
 		}
 	}
