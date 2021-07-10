@@ -1,19 +1,14 @@
-﻿using Sandbox;
+using Sandbox;
 
-[Library( "weapon_flightgun", Title = "Flight Gun", Spawnable = true )]
-partial class FlightGun : Weapon
+[Library( "weapon_admingun", Title = "Sexyness", Spawnable = true )]
+partial class Sexyness : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	public override float PrimaryRate => 1500.0f;
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 5.0f;
-	public virtual void ShootFlightBullet( float spread, float force, float damage, float bulletSize )
-	{
-		var forward = Owner.EyeRot.Forward;
-		forward += (Vector3.Random + Vector3.Random + Vector3.Random + Vector3.Random) * spread * 0.25f;
-		forward = forward.Normal;
-	}
+
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -29,12 +24,15 @@ partial class FlightGun : Weapon
 		(Owner as AnimEntity)?.SetAnimBool( "b_attack", true );
 
 		//
+		// Tell the clients to play the shoot effects
+		//WWWWWWWWWWWWWWW
+		ShootEffects();
+		PlaySound( "admin_gun.shoot" );
+
+		//
 		// Shoot the bullets
 		//
-		ShootFlightBullet( 0.0f, 0.0f, 0.0f, 0.0f );
-		
-		Owner.Velocity = Owner.EyeRot.Forward * 1000;
-		
+		ShootBullet( 0.0f, 100.5f, 100.0f, 3.0f );
 	}
 
 	public override void AttackSecondary()
@@ -66,3 +64,4 @@ partial class FlightGun : Weapon
 	}
 
 }
+

@@ -326,9 +326,9 @@
 ]
 
 // 
-// FlightGun : Weapon 
+// Sexyness : Weapon 
 // 
-@PointClass = weapon_flightgun : ""
+@PointClass = weapon_admingun : ""
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
@@ -350,9 +350,9 @@
 ]
 
 // 
-// Sexyness : Weapon 
+// FlightGun : Weapon 
 // 
-@PointClass = weapon_admingun : ""
+@PointClass = weapon_flightgun : ""
 [
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
