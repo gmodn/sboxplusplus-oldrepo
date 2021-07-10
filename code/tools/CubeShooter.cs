@@ -14,7 +14,7 @@
 					ShootBox();
 				}
 
-				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0.05f )
+				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0f )
 				{
 					timeSinceShoot = 0;
 					ShootBox();
