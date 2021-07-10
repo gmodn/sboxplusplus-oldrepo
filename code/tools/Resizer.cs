@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Sandbox.Tools
 {
@@ -33,7 +33,7 @@ namespace Sandbox.Tools
 				if ( tr.Entity is LightEntity || tr.Entity is LampEntity )
 					return;
 
-				var scale = Math.Clamp( tr.Entity.Scale + ((0.5f * Time.Delta) * resizeDir), 0.4f, 4.0f );
+				var scale = Math.Clamp( tr.Entity.Scale + ((0.5f * Time.Delta) * resizeDir), 0.4f, 1000000.0f );
 
 				if ( tr.Entity.Scale != scale )
 				{
