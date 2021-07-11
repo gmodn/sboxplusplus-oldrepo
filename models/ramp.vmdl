@@ -66,7 +66,7 @@
 					{
 						_class = "RenderMeshFile"
 						filename = "models/ramp.fbx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_translation = [ 0.0, 0.0, 500.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 0.2
 						align_origin_x_type = "None"
