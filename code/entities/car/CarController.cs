@@ -27,7 +27,7 @@ public class CarController : PawnController
 			return;
 		}
 
-		const float heightOffset = 10;
+		float heightOffset = (20 * car.Scale);
 
 		Position = car.Position + car.Rotation.Up * heightOffset;
 		Rotation = car.Rotation;

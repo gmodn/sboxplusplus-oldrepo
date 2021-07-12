@@ -5,6 +5,9 @@ using System.Collections.Generic;
 [Library( "ent_car", Title = "Car", Spawnable = true )]
 public partial class CarEntity : Prop, IUse
 {
+	[ConVar.Replicated( "debug_car" )]
+	public static bool debug_car { get; set; } = false;
+
 	private CarWheel frontLeft;
 	private CarWheel frontRight;
 	private CarWheel backLeft;
@@ -18,6 +21,8 @@ public partial class CarEntity : Prop, IUse
 	private bool frontWheelsOnGround;
 	private bool backWheelsOnGround;
 	private float accelerateDirection;
+	private float airRoll;
+	private float airTilt;
 
 	[Net] private float WheelSpeed { get; set; }
 	[Net] private float TurnDirection { get; set; }
@@ -32,12 +37,16 @@ public partial class CarEntity : Prop, IUse
 		public float throttle;
 		public float turning;
 		public float breaking;
+		public float tilt;
+		public float roll;
 
 		public void Reset()
 		{
 			throttle = 0;
 			turning = 0;
 			breaking = 0;
+			tilt = 0;
+			roll = 0;
 		}
 	}
 
@@ -166,6 +175,9 @@ public partial class CarEntity : Prop, IUse
 		player.Vehicle = null;
 		player.VehicleController = null;
 		player.VehicleCamera = null;
+		player.PhysicsBody.Enabled = true;
+
+		ResetInput();
 	}
 
 	protected override void OnDestroy()
@@ -200,8 +212,6 @@ public partial class CarEntity : Prop, IUse
 				RemoveDriver( player );
 			}
 		}
-
-		ResetInput();
 	}
 
 	public override void Simulate( Client owner )
@@ -226,6 +236,8 @@ public partial class CarEntity : Prop, IUse
 			currentInput.throttle = (Input.Down( InputButton.Forward ) ? 1 : 0) + (Input.Down( InputButton.Back ) ? -1 : 0);
 			currentInput.turning = (Input.Down( InputButton.Left ) ? 1 : 0) + (Input.Down( InputButton.Right ) ? -1 : 0);
 			currentInput.breaking = (Input.Down( InputButton.Jump ) ? 1 : 0);
+			currentInput.tilt = (Input.Down( InputButton.Run ) ? 1 : 0) + (Input.Down( InputButton.Duck ) ? -1 : 0);
+			currentInput.roll = (Input.Down( InputButton.Left ) ? 1 : 0) + (Input.Down( InputButton.Right ) ? -1 : 0);
 		}
 	}
 
@@ -243,13 +255,16 @@ public partial class CarEntity : Prop, IUse
 
 		body.DragEnabled = false;
 		body.LinearDamping = 0;
-		body.AngularDamping = (backWheelsOnGround && frontWheelsOnGround) ? 0 : 2;
+		body.AngularDamping = (backWheelsOnGround && frontWheelsOnGround) ? 0 : 0.5f;
 		body.GravityScale = (backWheelsOnGround && frontWheelsOnGround) ? 0 : 1;
 
 		var rotation = body.Rotation;
 
 		accelerateDirection = currentInput.throttle.Clamp( -1, 1 ) * (1.0f - currentInput.breaking);
 		TurnDirection = TurnDirection.LerpTo( currentInput.turning.Clamp( -1, 1 ), 1.0f - MathF.Pow( 0.0075f, dt ) );
+
+		airRoll = airRoll.LerpTo( currentInput.roll.Clamp( -1, 1 ), 1.0f - MathF.Pow( 0.0001f, dt ) );
+		airTilt = airTilt.LerpTo( currentInput.tilt.Clamp( -1, 1 ), 1.0f - MathF.Pow( 0.0001f, dt ) );
 
 		float targetTilt = 0;
 		float targetLean = 0;
@@ -272,7 +287,7 @@ public partial class CarEntity : Prop, IUse
 		{
 			var forwardSpeed = MathF.Abs( localVelocity.x );
 			var speedFactor = 1.0f - (forwardSpeed / 5000.0f).Clamp( 0.0f, 1.0f );
-			var acceleration = speedFactor * (accelerateDirection < 0.0f ? 200.0f : 600.0f) * accelerateDirection * dt;
+			var acceleration = speedFactor * (accelerateDirection < 0.0f ? 200.0f : 700.0f) * accelerateDirection * dt;
 			body.Velocity += rotation * new Vector3( acceleration, 0, 0 );
 		}
 
@@ -281,13 +296,15 @@ public partial class CarEntity : Prop, IUse
 
 		if ( frontWheelsOnGround && backWheelsOnGround )
 		{
-			body.Velocity += (Vector3.Down * 900.0f) * dt;
+			body.Velocity += PhysicsWorld.Gravity * dt;
 		}
+
+		bool canAirControl = false;
 
 		if ( onGround )
 		{
 			float forwardDamping = 0.2f;
-			body.Velocity = VelocityDamping( body.Velocity, rotation, new Vector3( forwardDamping.LerpTo( 0.99f, currentInput.breaking ), 1.0f, 0.0f ), dt );
+			body.Velocity = VelocityDamping( body.Velocity, rotation, new Vector3( forwardDamping.LerpTo( 0.9f, currentInput.breaking ), 1.0f, 0.0f ), dt );
 
 			localVelocity = rotation.Inverse * body.Velocity;
 			WheelSpeed = localVelocity.x;
@@ -295,6 +312,60 @@ public partial class CarEntity : Prop, IUse
 
 			body.AngularVelocity += rotation * new Vector3( 0, 0, turnAmount );
 			body.AngularVelocity = VelocityDamping( body.AngularVelocity, rotation, new Vector3( 0, 0, 0.999f ), dt );
+
+			airRoll = 0;
+			airTilt = 0;
+		}
+		else
+		{
+			var s = body.Position + (rotation * body.LocalMassCenter);
+			var tr = Trace.Ray( s, s + rotation.Down * 50 )
+				.Ignore( this )
+				.Run();
+
+			if ( debug_car )
+				DebugOverlay.Line( tr.StartPos, tr.EndPos, tr.Hit ? Color.Red : Color.Green );
+
+			canAirControl = !tr.Hit;
+		}
+
+		if ( canAirControl && (airRoll != 0 || airTilt != 0) )
+		{
+			var s = body.Position + (rotation * body.LocalMassCenter) + (rotation.Right * airRoll * 50) + (rotation.Down * 10);
+			var tr = Trace.Ray( s, s + rotation.Up * 25 )
+				.Ignore( this )
+				.Run();
+
+			if ( debug_car )
+				DebugOverlay.Line( tr.StartPos, tr.EndPos );
+
+			bool dampen = false;
+
+			if ( currentInput.roll.Clamp( -1, 1 ) != 0 )
+			{
+				var force = tr.Hit ? 400.0f : 100.0f;
+				var roll = tr.Hit ? currentInput.roll.Clamp( -1, 1 ) : airRoll;
+				body.ApplyForceAt( body.MassCenter + rotation.Left * (50 * roll), (rotation.Down * roll) * (roll * (body.Mass * force)) );
+
+				if ( debug_car )
+					DebugOverlay.Sphere( body.MassCenter + rotation.Left * (50 * roll), 8, Color.Red );
+
+				dampen = true;
+			}
+
+			if ( !tr.Hit && currentInput.tilt.Clamp( -1, 1 ) != 0 )
+			{
+				var force = 200.0f;
+				body.ApplyForceAt( body.MassCenter + rotation.Forward * (50 * airTilt), (rotation.Down * airTilt) * (airTilt * (body.Mass * force)) );
+
+				if ( debug_car )
+					DebugOverlay.Sphere( body.MassCenter + rotation.Forward * (50 * airTilt), 8, Color.Green );
+
+				dampen = true;
+			}
+
+			if ( dampen )
+				body.AngularVelocity = VelocityDamping( body.AngularVelocity, rotation, 0.95f, dt );
 		}
 
 		localVelocity = rotation.Inverse * body.Velocity;
@@ -304,7 +375,7 @@ public partial class CarEntity : Prop, IUse
 	private static float CalculateTurnFactor( float direction, float speed )
 	{
 		var turnFactor = MathF.Min( speed / 500.0f, 1 );
-		var yawSpeedFactor = 1.0f - (speed / 1000.0f).Clamp( 0, 0.5f );
+		var yawSpeedFactor = 1.0f - (speed / 1000.0f).Clamp( 0, 0.4f );
 
 		return direction * turnFactor * yawSpeedFactor;
 	}
@@ -318,26 +389,26 @@ public partial class CarEntity : Prop, IUse
 
 	private void RaycastWheels( Rotation rotation, bool doPhysics, out bool frontWheels, out bool backWheels, float dt )
 	{
-		const float forward = 42;
-		const float right = 32;
+		float forward = 42;
+		float right = 32;
 
-		var frontLeftPos = rotation.Forward * forward + rotation.Right * right;
-		var frontRightPos = rotation.Forward * forward - rotation.Right * right;
-		var backLeftPos = -rotation.Forward * forward + rotation.Right * right;
-		var backRightPos = -rotation.Forward * forward - rotation.Right * right;
+		var frontLeftPos = rotation.Forward * forward + rotation.Right * right + rotation.Up * 20;
+		var frontRightPos = rotation.Forward * forward - rotation.Right * right + rotation.Up * 20;
+		var backLeftPos = -rotation.Forward * forward + rotation.Right * right + rotation.Up * 20;
+		var backRightPos = -rotation.Forward * forward - rotation.Right * right + rotation.Up * 20;
 
 		var tiltAmount = AccelerationTilt * 2.5f;
 		var leanAmount = TurnLean * 2.5f;
 
-		const float length = 20.0f;
+		float length = 20.0f;
 
 		frontWheels =
-			frontLeft.Raycast( length + tiltAmount - leanAmount, doPhysics, frontLeftPos, ref frontLeftDistance, dt ) |
-			frontRight.Raycast( length + tiltAmount + leanAmount, doPhysics, frontRightPos, ref frontRightDistance, dt );
+			frontLeft.Raycast( length + tiltAmount - leanAmount, doPhysics, frontLeftPos * Scale, ref frontLeftDistance, dt ) |
+			frontRight.Raycast( length + tiltAmount + leanAmount, doPhysics, frontRightPos * Scale, ref frontRightDistance, dt );
 
 		backWheels =
-			backLeft.Raycast( length - tiltAmount - leanAmount, doPhysics, backLeftPos, ref backLeftDistance, dt ) |
-			backRight.Raycast( length - tiltAmount + leanAmount, doPhysics, backRightPos, ref backRightDistance, dt );
+			backLeft.Raycast( length - tiltAmount - leanAmount, doPhysics, backLeftPos * Scale, ref backLeftDistance, dt ) |
+			backRight.Raycast( length - tiltAmount + leanAmount, doPhysics, backRightPos * Scale, ref backRightDistance, dt );
 	}
 
 	float wheelAngle = 0.0f;
@@ -346,11 +417,11 @@ public partial class CarEntity : Prop, IUse
 	[Event.Frame]
 	public void OnFrame()
 	{
-		wheelAngle = wheelAngle.LerpTo( CalculateTurnFactor( TurnDirection, Math.Abs( WheelSpeed ) ), 1.0f - MathF.Pow( 0.01f, Time.Delta ) );
-		wheelRevolute += (WheelSpeed / 14.0f).RadianToDegree() * Time.Delta;
+		wheelAngle = wheelAngle.LerpTo( TurnDirection * 25, 1.0f - MathF.Pow( 0.001f, Time.Delta ) );
+		wheelRevolute += (WheelSpeed / (14.0f * Scale)).RadianToDegree() * Time.Delta;
 
-		var wheelRotRight = Rotation.From( -wheelAngle * 70, 180, -wheelRevolute );
-		var wheelRotLeft = Rotation.From( wheelAngle * 70, 0, wheelRevolute );
+		var wheelRotRight = Rotation.From( -wheelAngle, 180, -wheelRevolute );
+		var wheelRotLeft = Rotation.From( wheelAngle, 0, wheelRevolute );
 		var wheelRotBackRight = Rotation.From( 0, 90, -wheelRevolute );
 		var wheelRotBackLeft = Rotation.From( 0, -90, wheelRevolute );
 
@@ -375,6 +446,7 @@ public partial class CarEntity : Prop, IUse
 			player.Vehicle = this;
 			player.VehicleController = new CarController();
 			player.VehicleCamera = new CarCamera();
+			player.PhysicsBody.Enabled = false;
 			driver = player;
 		}
 
@@ -397,7 +469,7 @@ public partial class CarEntity : Prop, IUse
 		if ( !body.IsValid() )
 			return;
 
-		if ( other != driver && other is Player player )
+		if ( other is SandboxPlayer player && player.Vehicle == null )
 		{
 			var speed = body.Velocity.Length;
 			var forceOrigin = Position + Rotation.Down * Rand.Float( 20, 30 );
@@ -422,19 +494,32 @@ public partial class CarEntity : Prop, IUse
 		if ( !IsServer )
 			return;
 
-		var body = PhysicsBody;
-		if ( !body.IsValid() )
-			return;
-
-		if ( eventData.Entity != driver && eventData.Entity is Player player )
+		if ( eventData.Entity is SandboxPlayer player && player.Vehicle != null )
 		{
-			base.OnPhysicsCollision( eventData );
+			return;
+		}
 
-			if ( player.LifeState == LifeState.Dead )
+		var propData = GetModelPropData();
+
+		var minImpactSpeed = propData.MinImpactDamageSpeed;
+		if ( minImpactSpeed <= 0.0f ) minImpactSpeed = 500;
+
+		var impactDmg = propData.ImpactDamage;
+		if ( impactDmg <= 0.0f ) impactDmg = 10;
+
+		var speed = eventData.Speed;
+
+		if ( speed > minImpactSpeed )
+		{
+			if ( eventData.Entity.IsValid() && eventData.Entity != this )
 			{
-				Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", eventData.Pos );
-				Particles.Create( "particles/impact.flesh-big.vpcf", eventData.Pos );
-				PlaySound( "kersplat" );
+				var damage = speed / minImpactSpeed * impactDmg * 1.2f;
+				eventData.Entity.TakeDamage( DamageInfo.Generic( damage )
+					.WithFlag( DamageFlags.PhysicsImpact )
+					.WithFlag( DamageFlags.Vehicle )
+					.WithAttacker( driver != null ? driver : this, driver != null ? this : null )
+					.WithPosition( eventData.Pos )
+					.WithForce( eventData.PreVelocity ) );
 			}
 		}
 	}

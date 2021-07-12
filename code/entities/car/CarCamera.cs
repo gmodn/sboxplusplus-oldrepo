@@ -9,12 +9,12 @@ public class CarCamera : Camera
 	protected virtual float FovSmoothingSpeed => 4.0f;
 	protected virtual float OrbitCooldown => 0.6f;
 	protected virtual float OrbitSmoothingSpeed => 25.0f;
-	protected virtual float OrbitReturnSmoothingSpeed => 3.0f;
+	protected virtual float OrbitReturnSmoothingSpeed => 2.0f;
 	protected virtual float MinOrbitPitch => -25.0f;
 	protected virtual float MaxOrbitPitch => 70.0f;
 	protected virtual float FixedOrbitPitch => 10.0f;
-	protected virtual float OrbitHeight => 60.0f;
-	protected virtual float OrbitDistance => 140.0f;
+	protected virtual float OrbitHeight => 35.0f;
+	protected virtual float OrbitDistance => 150.0f;
 	protected virtual float MaxOrbitReturnSpeed => 100.0f;
 
 	private bool orbitEnabled;
@@ -45,6 +45,10 @@ public class CarCamera : Camera
 		var car = (pawn as SandboxPlayer)?.Vehicle as CarEntity;
 		if ( !car.IsValid() ) return;
 
+		var body = car.PhysicsBody;
+		if ( !body.IsValid() )
+			return;
+
 		Viewer = null;
 
 		if ( orbitEnabled && timeSinceOrbit > OrbitCooldown )
@@ -52,10 +56,10 @@ public class CarCamera : Camera
 			orbitEnabled = false;
 		}
 
-		var speed = car.IsValid() ? car.MovementSpeed : 0.0f;
+		var speed = car.MovementSpeed;
 		var speedAbs = Math.Abs( speed );
 
-		var carPos = car.Position;
+		var carPos = car.Position + car.Rotation * body.LocalMassCenter;
 		var carRot = car.Rotation;
 
 		if ( orbitEnabled )
@@ -82,12 +86,12 @@ public class CarCamera : Camera
 
 		Rot = orbitYawRot * orbitPitchRot;
 
-		var startPos = carPos + carRot.Up * OrbitHeight;
-		var targetPos = startPos + Rot.Backward * OrbitDistance;
+		var startPos = carPos;
+		var targetPos = startPos + Rot.Backward * (OrbitDistance * car.Scale) + ( Vector3.Up * (OrbitHeight * car.Scale) );
 
 		var tr = Trace.Ray( startPos, targetPos )
 			.Ignore( car )
-			.Radius( 8.0f )
+			.Radius( 5.0f )
 			.WorldOnly()
 			.Run();
 
