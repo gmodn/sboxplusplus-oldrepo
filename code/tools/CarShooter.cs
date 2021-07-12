@@ -1,7 +1,7 @@
 ﻿namespace Sandbox.Tools
 {
-	[Library( "tool_glizzygun", Title = "Glizzy Gun", Description = "You're Favorite", Group = "fun" )]
-	public class GlizyGun : BaseTool
+	[Library( "tool_boxgun", Title = "Car Shooter", Description = "It's a hit and run", Group = "fun" )]
+	public class CarShooter : BaseTool
 	{
 		TimeSince timeSinceShoot;
 
@@ -24,7 +24,7 @@
 
 		void ShootBox()
 		{
-			var ent = new GlizzyEntity()
+			var ent = new CarEntity
 			{
 				Position = Owner.EyePos + Owner.EyeRot.Forward * 150,
 				Rotation = Owner.EyeRot
