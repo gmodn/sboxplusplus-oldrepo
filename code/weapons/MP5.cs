@@ -5,9 +5,9 @@ partial class MP5 : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
 
-	public override float PrimaryRate => 10.0f;
+	public override float PrimaryRate => 15.0f;
 	public override float SecondaryRate => 1.0f;
-	public override float ReloadTime => 3.0f;
+	public override float ReloadTime => 5.0f;
 
 	public override void Spawn()
 	{
