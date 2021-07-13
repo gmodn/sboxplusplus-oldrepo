@@ -11,18 +11,18 @@
 			{
 				if ( Input.Pressed( InputButton.Attack1 ) )
 				{
-					ShootBox();
+					ShootCar();
 				}
 
 				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0.05f )
 				{
 					timeSinceShoot = 0;
-					ShootBox();
+					ShootCar();
 				}
 			}
 		}
 
-		void ShootBox()
+		void ShootCar()
 		{
 			var ent = new CarEntity
 			{
@@ -31,6 +31,9 @@
 			};
 
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+			
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
 		}
 	}
 

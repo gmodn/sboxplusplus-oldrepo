@@ -11,18 +11,18 @@ namespace Sandbox.Tools
 			{
 				if ( Input.Pressed( InputButton.Attack1 ) )
 				{
-					ShootBox();
+					ShootBarrel();
 				}
 
 				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0.05f )
 				{
 					timeSinceShoot = 0;
-					ShootBox();
+					ShootBarrel();
 				}
 			}
 		}
 
-		void ShootBox()
+		void ShootBarrel()
 		{
 			var ent = new Prop
 			{
@@ -32,6 +32,10 @@ namespace Sandbox.Tools
 
 			ent.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+			
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
+			
 		}
 	}
 

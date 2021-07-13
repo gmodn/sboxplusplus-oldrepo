@@ -11,18 +11,18 @@
 			{
 				if ( Input.Pressed( InputButton.Attack1 ) )
 				{
-					ShootBox();
+					ShootGlizzy();
 				}
 
 				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0.05f )
 				{
 					timeSinceShoot = 0;
-					ShootBox();
+					ShootGlizzy();
 				}
 			}
 		}
 
-		void ShootBox()
+		void ShootGlizzy()
 		{
 			var ent = new GlizzyEntity()
 			{
@@ -31,6 +31,9 @@
 			};
 
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+			
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
 		}
 	}
 
