@@ -1,0 +1,32 @@
+﻿<div>
+    <div @ref="WeaponsPanel" class="weapons">
+        <label @ref="RotationName">Gun Game</label>
+
+        <div class="weapon-icons">
+            <div>
+                <text>Current</text>
+                <div class="weapon-icon" @ref="CurrentWeapon" style="background-image: url(/ui/weapons/smg.png);">
+                </div>
+            </div>
+
+            <div>
+                <text>Next</text>
+                <div class="weapon-icon" @ref="NextWeapon" style="background-image: url(/ui/weapons/smg.png);">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div @ref="WinScreen" class="WinScreen">
+        <div @ref="HeroPortrait" class="HeroPortrait">
+        </div>
+
+        <div class="winner center">
+            <text @ref="Winner"></text>
+        </div>
+    </div>
+
+    <div class="warning-container" @ref="LastWeaponWarningPanel">
+    </div>
+</div>

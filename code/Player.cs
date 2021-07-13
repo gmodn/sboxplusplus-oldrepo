@@ -62,6 +62,13 @@ partial class SandboxPlayer : Player
 	{
 		base.OnKilled();
 
+		if ( lastDamage.Flags.HasFlag( DamageFlags.Vehicle ) )
+		{
+			Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", lastDamage.Position );
+			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
+			PlaySound( "kersplat" );
+		}
+
 		VehicleController = null;
 		VehicleCamera = null;
 		Vehicle = null;
