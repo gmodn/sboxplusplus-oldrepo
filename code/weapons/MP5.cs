@@ -1,11 +1,11 @@
 ﻿using Sandbox;
 
-[Library( "weapon_mp5", Title = "MP5", Spawnable = true )]
+[Library( "weapon_mp", Title = "MP5", Spawnable = true )]
 partial class MP5 : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
 
-	public override float PrimaryRate => 15.0f;
+	public override float PrimaryRate => 5.0f;
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 5.0f;
 
@@ -32,7 +32,7 @@ partial class MP5 : Weapon
 		//
 		// Shoot the bullets
 		//
-		ShootBullet( 0.1f, 1.5f, 3.0f, 3.0f );
+		ShootBullet( 0.1f, 0.3f, 3.0f, 0.3f );
 	}
 
 	public override void AttackSecondary()
