@@ -17,6 +17,7 @@ partial class Crowbar : Weapon
 	public override void AttackPrimary()
 	{
 		TimeSincePrimaryAttack = 0;
+		TimeSinceSecondaryAttack = 0;
 		
 		if ( MeleeAttack() )
 		{
@@ -97,60 +98,5 @@ partial class Crowbar : Weapon
 			_ = new Sandbox.ScreenShake.Perlin( 1.0f, 1.0f, 3.0f );
 		}
 		ViewModelEntity?.SetAnimBool( "fire", true );
-	}
-
-	private void Activate()
-	{
-		if ( MeleeAttack() )
-		{
-			OnMeleeHit();
-		}
-		else
-		{
-			OnMeleeMiss();
-		}
-
-		PlaySound( "rust_flashlight.attack" );
-	}
-
-	private void Deactivate()
-	{
-		if ( MeleeAttack() )
-		{
-			OnMeleeHit();
-		}
-		else
-		{
-			OnMeleeMiss();
-		}
-
-		PlaySound( "rust_flashlight.attack" );
-	}
-
-	public override void ActiveStart( Entity ent )
-	{
-		base.ActiveStart( ent );
-
-		if ( IsServer )
-		{
-			Activate();
-		}
-	}
-
-	public override void ActiveEnd( Entity ent, bool dropped )
-	{
-		base.ActiveEnd( ent, dropped );
-
-		if ( IsServer )
-		{
-			if ( dropped )
-			{
-				Activate();
-			}
-			else
-			{
-				Deactivate();
-			}
-		}
 	}
 }
