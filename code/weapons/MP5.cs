@@ -1,6 +1,7 @@
-﻿using Sandbox;
+﻿using System.Linq;
+using Sandbox;
 
-[Library( "weapon_mp", Title = "MP5", Spawnable = true )]
+[Library( "weapon_mp5", Title = "MP5", Spawnable = true )]
 partial class MP5 : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_smg/v_rust_smg.vmdl";
@@ -8,7 +9,7 @@ partial class MP5 : Weapon
 	public override float PrimaryRate => 5.0f;
 	public override float SecondaryRate => 1.0f;
 	public override float ReloadTime => 5.0f;
-
+	
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -37,9 +38,34 @@ partial class MP5 : Weapon
 
 	public override void AttackSecondary()
 	{
-		// Grenade lob
+
+		TimeSincePrimaryAttack = -0.5f;
+		TimeSinceSecondaryAttack = -0.5f;
+		
+		PlaySound( "rust_pumpshotgun.shoot" );
+		ShootGrenade();
 	}
 
+	private void ShootGrenade()
+	{
+		if ( Host.IsClient )
+			return;
+		
+		var grenade = new Prop
+		{
+			Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+			Rotation = Owner.EyeRot,
+			Scale = 0.25f
+		};
+		
+		//TODO: Should be replaced with an actual grenade model
+		grenade.SetModel( "models/rust_props/barrels/fuel_barrel.vmdl" );
+		grenade.Velocity = Owner.EyeRot.Forward * 1000;
+
+		grenade.ExplodeAsync( 1f );
+
+	}
+	
 	[ClientRpc]
 	protected override void ShootEffects()
 	{
