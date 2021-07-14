@@ -168,30 +168,18 @@ partial class Crowbar : Weapon
 
 	private void Activate()
 	{
-		if ( MeleeAttack() )
+		if ( worldLight.IsValid() )
 		{
-			OnMeleeHit();
+			worldLight.Enabled = LightEnabled;
 		}
-		else
-		{
-			OnMeleeMiss();
-		}
-
-		PlaySound( "rust_flashlight.attack" );
 	}
 
 	private void Deactivate()
 	{
-		if ( MeleeAttack() )
+		if ( worldLight.IsValid() )
 		{
-			OnMeleeHit();
+			worldLight.Enabled = false;
 		}
-		else
-		{
-			OnMeleeMiss();
-		}
-
-		PlaySound( "rust_flashlight.attack" );
 	}
 
 	public override void ActiveStart( Entity ent )
@@ -204,6 +192,20 @@ partial class Crowbar : Weapon
 		}
 	}
 
+	Input.Pressed(InputButton.Attack1)
+	{
+		if ( MeleeAttack() )
+		{
+			OnMeleeHit();
+		}
+		else
+		{
+			OnMeleeMiss();
+		}
+
+		PlaySound( "rust_flashlight.attack" );
+	}
+		
 	public override void ActiveEnd( Entity ent, bool dropped )
 	{
 		base.ActiveEnd( ent, dropped );
