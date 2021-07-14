@@ -20,7 +20,7 @@ partial class Crowbar : Weapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel( "models/weapons/crowbar/w_crowbar.vmdl" );
 
 		worldLight = CreateLight();
 		worldLight.SetParent( this, "slide", new Transform( LightOffset ) );
