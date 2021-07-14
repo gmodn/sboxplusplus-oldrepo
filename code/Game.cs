@@ -61,6 +61,9 @@ partial class SandboxGame : Game
 			//DebugOverlay.Line( p, tr.EndPos, 10, false );
 		}
 
+		var player = owner as SandboxPlayer;
+		player.AddToUndo( ent );
+
 	}
 
 	[ServerCmd( "spawn_entity" )]
@@ -92,6 +95,9 @@ partial class SandboxGame : Game
 		ent.Position = tr.EndPos;
 		ent.Rotation = Rotation.From( new Angles( 0, owner.EyeRot.Angles().yaw, 0 ) );
 
+		var player = owner as SandboxPlayer;
+		player.AddToUndo( ent );
+		
 		//Log.Info( $"ent: {ent}" );
 	}
 }

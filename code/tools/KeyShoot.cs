@@ -32,6 +32,9 @@
 
 			ent.SetModel( "models/sboxkeyv2.vmdl" );
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+			
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
 		}
 	}
 

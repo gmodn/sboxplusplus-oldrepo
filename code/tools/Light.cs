@@ -106,6 +106,9 @@
 					.WithMaxRestLength( 100 )
 					.WithCollisionsEnabled()
 					.Create();
+				
+				var player = Owner as SandboxPlayer;
+				player.AddToUndo( light );
 			}
 		}
 	}

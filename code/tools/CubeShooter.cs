@@ -11,18 +11,18 @@
 			{
 				if ( Input.Pressed( InputButton.Attack1 ) )
 				{
-					ShootBox();
+					ShootCube();
 				}
 
 				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0f )
 				{
 					timeSinceShoot = 0;
-					ShootBox();
+					ShootCube();
 				}
 			}
 		}
 
-		void ShootBox()
+		void ShootCube()
 		{
 			var ent = new Prop
 			{
@@ -32,6 +32,9 @@
 
 			ent.SetModel("models/weightedcube.vmdl");
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
+			
+			var player = Owner as SandboxPlayer;
+			player.AddToUndo( ent );
 		}
 	}
 

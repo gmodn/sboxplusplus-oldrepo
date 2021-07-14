@@ -25,7 +25,7 @@ partial class Sexyness : Weapon
 
 		//
 		// Tell the clients to play the shoot effects
-		//WWWWWWWWWWWWWWW
+		//
 		ShootEffects();
 		PlaySound( "admin_gun.shoot" );
 
