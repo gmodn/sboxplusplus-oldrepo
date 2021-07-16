@@ -12,7 +12,7 @@ partial class SandboxPlayer
 		if ( IsUseDisabled() )
 			return null;
 
-		var tr = Trace.Ray( EyePos, EyePos + EyeRot.Forward * 85 )
+		var tr = Trace.Ray( EyePos, EyePos + EyeRot.Forward * (85 * Scale) )
 			.Radius( 2 )
 			.HitLayer( CollisionLayer.Debris )
 			.Ignore( this )

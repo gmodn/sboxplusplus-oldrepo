@@ -23,8 +23,11 @@ public partial class Weapon : BaseWeapon, IUse
 		{
 			Parent = this,
 			Position = Position,
-			EnableTouch = true
+			EnableTouch = true,
+			EnableSelfCollisions = false
 		};
+
+		PickupTrigger.PhysicsBody.EnableAutoSleeping = false;
 	}
 
 	public override void ActiveStart( Entity ent )

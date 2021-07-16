@@ -8,6 +8,7 @@ partial class SandboxPlayer : Player
 	private DamageInfo lastDamage;
 
 	[Net] public PawnController VehicleController { get; set; }
+	[Net] public PawnAnimator VehicleAnimator { get; set; }
 	[Net] public ICamera VehicleCamera { get; set; }
 	[Net] public Entity Vehicle { get; set; }
 	[Net] public ICamera MainCamera { get; set; }
@@ -70,6 +71,7 @@ partial class SandboxPlayer : Player
 		}
 
 		VehicleController = null;
+		VehicleAnimator = null;
 		VehicleCamera = null;
 		Vehicle = null;
 
@@ -115,6 +117,8 @@ partial class SandboxPlayer : Player
 
 	public override PawnAnimator GetActiveAnimator()
 	{
+		if ( VehicleAnimator != null ) return VehicleAnimator;
+
 		return base.GetActiveAnimator();
 	}
 
@@ -188,11 +192,6 @@ partial class SandboxPlayer : Player
 		if ( Input.Left != 0 || Input.Forward != 0 )
 		{
 			timeSinceJumpReleased = 1;
-		}
-
-		if ( Input.Pressed(InputButton.Zoom) )
-		{
-			Undo();
 		}
 	}
 

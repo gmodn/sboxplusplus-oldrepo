@@ -7,7 +7,7 @@ partial class Tool : Carriable
 	[ConVar.ClientData( "tool_current" )]
 	public static string UserToolCurrent { get; set; } = "tool_boxgun";
 
-	public override string ViewModelPath => "models/weapons/v_toolgun.vmdl";
+	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	[Net, Predicted]
 	public BaseTool CurrentTool { get; set; }
@@ -16,7 +16,7 @@ partial class Tool : Carriable
 	{
 		base.Spawn();
 
-		SetModel( "models/weapons/toolgun.vmdl" );
+		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
 	}
 
 	public override void Simulate( Client owner )

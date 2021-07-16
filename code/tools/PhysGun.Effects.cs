@@ -28,6 +28,9 @@ public partial class PhysGun
 		{
 			foreach ( var child in lastGrabbedEntity.Children.OfType<ModelEntity>() )
 			{
+				if ( child is Player )
+					continue;
+
 				child.GlowActive = false;
 				child.GlowState = GlowStates.GlowStateOff;
 			}
@@ -96,6 +99,9 @@ public partial class PhysGun
 
 				foreach ( var child in lastGrabbedEntity.Children.OfType<ModelEntity>() )
 				{
+					if ( child is Player )
+						continue;
+
 					child.GlowState = GlowStates.GlowStateOn;
 					child.GlowDistanceStart = 0;
 					child.GlowDistanceEnd = 1000;

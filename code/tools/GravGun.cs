@@ -95,7 +95,7 @@ public partial class GravGun : Carriable
 
 			var tr = Trace.Ray( eyePos, eyePos + eyeDir * MaxPullDistance )
 				.UseHitboxes()
-				.Ignore( owner )
+				.Ignore( owner, false )
 				.Radius( 2.0f )
 				.HitLayer( CollisionLayer.Debris )
 				.Run();
