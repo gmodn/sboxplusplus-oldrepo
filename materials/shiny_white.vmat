@@ -4,12 +4,15 @@ Layer0
 {
 	shader "generic.vfx"
 
+	//---- Self Illum ----
+	F_SELF_ILLUM 1
+
 	//---- Specular ----
 	F_SPECULAR 1
 
 	//---- Color ----
 	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
-	TextureColor "materials/dev/primary_white_color.tga"
+	TextureColor "materials/default/default_color.tga"
 
 	//---- Fog ----
 	g_bFogEnabled "1"
@@ -17,7 +20,7 @@ Layer0
 	//---- Lighting ----
 	g_flDirectionalLightmapMinZ "0.050"
 	g_flDirectionalLightmapStrength "1.000"
-	g_vGlossinessRange "[0.500 1.000]"
+	g_vGlossinessRange "[1.000 1.000]"
 	g_vMetalnessRange "[0.500 1.000]"
 	TextureGlossiness "materials/default/default_gloss.tga"
 	TextureMetalness "materials/default/default_metal.tga"
@@ -28,4 +31,9 @@ Layer0
 
 	//---- Normal Map ----
 	g_flBumpStrength "1.000"
+
+	//---- Self Illum ----
+	g_flSelfIllumScale "7.921"
+	g_vSelfIllumTint "[1.000000 1.000000 1.000000 0.000000]"
+	TextureSelfIllumMask "materials/default/default_selfillum.tga"
 }
