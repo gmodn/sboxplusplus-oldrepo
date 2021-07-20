@@ -8,7 +8,8 @@ public class Health : Panel
 
 	public Health()
 	{
-		Label = Add.Label( "100", "value" );
+	  
+      Label = Add.Label( "100", "value" );
 	}
 
 	public override void Tick()

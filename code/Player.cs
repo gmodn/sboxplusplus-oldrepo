@@ -62,6 +62,7 @@ partial class SandboxPlayer : Player
 	public override void OnKilled()
 	{
 		base.OnKilled();
+		PlaySound("hl2death");
 
 		if ( lastDamage.Flags.HasFlag( DamageFlags.Vehicle ) )
 		{
