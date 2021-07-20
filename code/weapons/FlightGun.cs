@@ -6,7 +6,7 @@ partial class FlightGun : Weapon
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
 	public override float PrimaryRate => 1500.0f;
-	public override float SecondaryRate => 1.0f;
+	public override float SecondaryRate => 1500.0f;
 	public override float ReloadTime => 5.0f;
 	public virtual void ShootFlightBullet( float spread, float force, float damage, float bulletSize )
 	{
@@ -39,7 +39,17 @@ partial class FlightGun : Weapon
 
 	public override void AttackSecondary()
 	{
-		// Grenade lob
+		TimeSincePrimaryAttack = 0;
+		TimeSinceSecondaryAttack = 0;
+
+		(Owner as AnimEntity)?.SetAnimBool( "b_attack", true );
+
+		//
+		// Shoot the bullets
+		//
+		ShootFlightBullet( 0.0f, 0.0f, 0.0f, 0.0f );
+
+		Owner.Velocity = Owner.EyeRot.Forward * 3000;
 	}
 
 	[ClientRpc]
