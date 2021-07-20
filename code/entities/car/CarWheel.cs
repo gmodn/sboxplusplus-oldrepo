@@ -53,7 +53,7 @@ struct CarWheel
 			return tr.Hit;
 		}
 
-		var body = parent.PhysicsBody;
+		var body = parent.PhysicsBody.SelfOrParent;
 
 		_previousLength = _currentLength;
 		_currentLength = (length * parent.Scale) - tr.Distance;

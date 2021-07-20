@@ -32,6 +32,7 @@ public class CarCamera : Camera
 	private Rotation orbitPitchRot;
 	private float currentFov;
 	private float carPitch;
+	private bool firstPerson;
 
 	public override void Activated()
 	{
@@ -45,6 +46,7 @@ public class CarCamera : Camera
 		orbitPitchRot = Rotation.Identity;
 		currentFov = MinFov;
 		carPitch = 0;
+		firstPerson = false;
 	}
 
 	public override void Update()
@@ -61,13 +63,12 @@ public class CarCamera : Camera
 
 		Viewer = null;
 
-		if ( orbitEnabled && timeSinceOrbit > OrbitCooldown )
-			orbitEnabled = false;
-
 		var speed = car.MovementSpeed;
 		var speedAbs = Math.Abs( speed );
 
-		var carPos = car.Position + car.Rotation * (body.LocalMassCenter * car.Scale);
+		if ( orbitEnabled && timeSinceOrbit > OrbitCooldown )
+			orbitEnabled = false;
+
 		var carRot = car.Rotation;
 		carPitch = carPitch.LerpTo( car.Grounded ? carRot.Pitch().Clamp( MinCarPitch, MaxCarPitch ) * (speed < 0.0f ? -1.0f : 1.0f) : 0.0f, Time.Delta * CarPitchSmoothingSpeed );
 
@@ -93,8 +94,38 @@ public class CarCamera : Camera
 			orbitAngles = orbitAngles.Normal;
 		}
 
+		if ( firstPerson )
+		{
+			DoFirstPerson( car, body );
+		}
+		else
+		{
+			DoThirdPerson( car, body );
+		}
+
+		currentFov = MaxFovSpeed > 0.0f ? currentFov.LerpTo( MinFov.LerpTo( MaxFov, speedAbs / MaxFovSpeed ), Time.Delta * FovSmoothingSpeed ) : MaxFov;
+		FieldOfView = currentFov;
+
+		ApplyShake( speedAbs );
+	}
+
+	private void DoFirstPerson( CarEntity car, PhysicsBody body )
+	{
+		var carPos = car.Position + car.Rotation * (body.LocalMassCenter * car.Scale);
+		carPos += Rot.Backward * (30 * car.Scale) + (Rot.Up * (30 * car.Scale));
+		var carRot = car.Rotation;
+
+		Viewer = Local.Pawn;
+
+		Rot = carRot;
+		Pos = carPos;
+	}
+
+	private void DoThirdPerson( CarEntity car, PhysicsBody body )
+	{
 		Rot = orbitYawRot * orbitPitchRot;
 
+		var carPos = car.Position + car.Rotation * (body.LocalMassCenter * car.Scale);
 		var startPos = carPos;
 		var targetPos = startPos + Rot.Backward * (OrbitDistance * car.Scale) + (Vector3.Up * (OrbitHeight * car.Scale));
 
@@ -105,11 +136,6 @@ public class CarCamera : Camera
 			.Run();
 
 		Pos = tr.EndPos;
-
-		currentFov = MaxFovSpeed > 0.0f ? currentFov.LerpTo( MinFov.LerpTo( MaxFov, speedAbs / MaxFovSpeed ), Time.Delta * FovSmoothingSpeed ) : MaxFov;
-		FieldOfView = currentFov;
-
-		ApplyShake( speedAbs );
 	}
 
 	public override void BuildInput( InputBuilder input )
@@ -118,6 +144,9 @@ public class CarCamera : Camera
 
 		var pawn = Local.Pawn;
 		if ( pawn == null ) return;
+
+		if ( input.Pressed( InputButton.View ) )
+			firstPerson = !firstPerson;
 
 		if ( (Math.Abs( input.AnalogLook.pitch ) + Math.Abs( input.AnalogLook.yaw )) > 0.0f )
 		{
@@ -141,6 +170,7 @@ public class CarCamera : Camera
 
 		input.ViewAngles = orbitAngles.WithYaw( orbitAngles.yaw );
 		input.ViewAngles = input.ViewAngles.Normal;
+		input.ViewAngles.roll = 0;
 	}
 
 	private void ApplyShake( float speed )
