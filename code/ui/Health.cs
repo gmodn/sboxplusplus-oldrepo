@@ -10,6 +10,7 @@ public class Health : Panel
 	{
 	  
       Label = Add.Label( "100", "value" );
+      
 	}
 
 	public override void Tick()
