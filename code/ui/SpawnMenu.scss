@@ -17,6 +17,7 @@
         flex-shrink: 0;
         margin-bottom: 4px;
         padding-left: 10px;
+        background-color: #0F131A;
 
         button {
             padding: 6px 5px;
@@ -40,8 +41,8 @@
                 transform: scale( 1 );
                 opacity: 1;
                 color: #fff;
-                //	background-color: #fff;//( #3273eb, 0.2 );
-                //color: #3273eb;
+                //background-color: #fff;//( #3273eb, 0.2 );
+                color: #3273eb;
             }
         }
     }
