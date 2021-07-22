@@ -63,8 +63,15 @@ partial class SandboxPlayer : Player
 	{
 		base.OnKilled();
 		PlaySound("hl2death");
+		Log.Info("Death was found.");
 
 		if ( lastDamage.Flags.HasFlag( DamageFlags.Vehicle ) )
+		{
+			Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", lastDamage.Position );
+			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
+			PlaySound( "kersplat" );
+		}
+		if ( lastDamage.Flags.HasFlag( DamageFlags.PhysicsImpact ) )
 		{
 			Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", lastDamage.Position );
 			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
