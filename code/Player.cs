@@ -113,6 +113,7 @@ partial class SandboxPlayer : Player
 	[ClientRpc]
 	public void TookDamage( DamageFlags damageFlags, Vector3 forcePos, Vector3 force )
 	{
+	
 	}
 
 	public override PawnController GetActiveController()
