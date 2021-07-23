@@ -15,6 +15,7 @@ public partial class BouncyBallEntity : Prop, IUse
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 		Scale = Rand.Float( 0.5f, 2.0f );
 		RenderColor = Color.Random.ToColor32();
+
 	}
 
 	protected override void OnPhysicsCollision( CollisionEventData eventData )
@@ -34,6 +35,7 @@ public partial class BouncyBallEntity : Prop, IUse
 		if ( user is Player player )
 		{
 			player.Health += 10;
+			
 
 			Delete();
 		}

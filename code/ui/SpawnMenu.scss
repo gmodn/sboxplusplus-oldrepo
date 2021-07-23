@@ -31,6 +31,7 @@
             color: #fff;
             cursor: pointer;
             
+            
             //border-radius: 5px;
             label {
                 text-shadow: 1px 1px 4px rgba( black, 0.2 );
@@ -128,6 +129,7 @@
 
 .spawnpage {
     display: none;
+    
 
     &.active {
         display: flex;
@@ -142,6 +144,7 @@
         justify-content: space-between;
         margin: 10px;
         border-radius: 5px;
+        
 
         .cell {
             padding: 5px;
@@ -159,6 +162,7 @@
             background-size: cover;
             background-color: rgba(black, 0.1);
             background-image: url( /entity/spawnicon.png );
+            
 
             label {
                 font-size: 9px;
@@ -167,6 +171,7 @@
                 left: 0;
                 right: 0;
                 pointer-events: none;
+                
             }
 
             &:hover {
