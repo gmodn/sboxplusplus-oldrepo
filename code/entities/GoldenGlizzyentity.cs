@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 using System;
 
 [Library( "ent_goldenglizzy", Title = "Golden Glizzy", Spawnable = true )]
@@ -24,7 +24,7 @@ public partial class GoldenGlizzyEntity : Prop, IUse
 	{
 		if ( user is Player player )
 		{
-			player.Health += 10000;
+			player.Health += 10000000;
 
 			Delete();
 		}
