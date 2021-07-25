@@ -43,67 +43,14 @@
 				]
 			},
 			{
-				_class = "BodyGroupList"
-				children = 
-				[
-					{
-						_class = "BodyGroup"
-						name = "umbrella_bg_pikapika_sm0_lod0"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"umbrella_bg_pikapika_sm1_lod0",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-				]
-			},
-			{
 				_class = "MaterialGroupList"
 				children = 
 				[
 					{
-						_class = "MaterialGroup"
-						name = "1"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/umbrella/umbrella.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_paintable.vmat"
-							},
-							{
-								from = "materials/models/unconid/umbrella/umbrella_paintable.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_paintable.vmat"
-							},
-							{
-								from = "materials/models/unconid/umbrella/umbrella_pika.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_pika.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "2"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/umbrella/umbrella.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_pika.vmat"
-							},
-							{
-								from = "materials/models/unconid/umbrella/umbrella_paintable.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_paintable.vmat"
-							},
-							{
-								from = "materials/models/unconid/umbrella/umbrella_pika.vmat"
-								to = "materials/models/unconid/umbrella/umbrella_pika.vmat"
-							},
-						]
+						_class = "DefaultMaterialGroup"
+						remaps = [  ]
+						use_global_default = false
+						global_default_material = ""
 					},
 				]
 			},
@@ -170,51 +117,18 @@
 				]
 			},
 			{
-				_class = "AnimationList"
+				_class = "PhysicsShapeList"
 				children = 
 				[
 					{
-						_class = "AnimFile"
-						name = "idle"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/umbrella/umbrella_refs/anim/_idle_0.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@idle_0"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/umbrella/umbrella_refs/anim/_idle_0.dmx"
-						start_frame = 0
-						end_frame = 0
-						framerate = 1.0
-						reverse = false
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						faceMergeAngle = 11.35
+						maxHullVertices = 26
 					},
 				]
-				default_root_bone_name = ""
 			},
 		]
 		model_archetype = ""

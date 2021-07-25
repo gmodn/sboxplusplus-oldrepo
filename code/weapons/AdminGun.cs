@@ -3,7 +3,7 @@ using Sandbox;
 [Library( "weapon_admingun", Title = "Sexyness", Spawnable = true )]
 partial class Sexyness : Weapon
 {
-	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
+	public override string ViewModelPath => "models/weapons/v_pist_weagon.vmdl";
 
 	public override float PrimaryRate => 1500.0f;
 	public override float SecondaryRate => 1.0f;
@@ -13,7 +13,7 @@ partial class Sexyness : Weapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel( "models/weapons/w_pist_weagon.vmdl" );
 	}
 
 	public override void AttackPrimary()
