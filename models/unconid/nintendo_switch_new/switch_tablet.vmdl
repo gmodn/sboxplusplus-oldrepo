@@ -203,36 +203,6 @@
 				[
 					{
 						_class = "BodyGroup"
-						name = "switch_tablet_bg_joy_con_l_sm0_lod0"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"switch_tablet_bg_joy-con_l_sm0_lod0",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "switch_tablet_bg_joy_con_r_sm0_lod0"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"switch_tablet_bg_joy-con_r_sm0_lod0",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
 						name = "switch_tablet_bg_rt_screen_sm0_lod0"
 						children = 
 						[
@@ -253,160 +223,10 @@
 				children = 
 				[
 					{
-						_class = "MaterialGroup"
-						name = "1"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "2"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "3"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "4"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
-							},
-							{
-								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
-							},
-						]
+						_class = "DefaultMaterialGroup"
+						remaps = [  ]
+						use_global_default = false
+						global_default_material = ""
 					},
 				]
 			},
@@ -464,40 +284,6 @@
 					},
 					{
 						_class = "RenderMeshFile"
-						name = "switch_tablet_bg_joy_con_l_sm0_lod0"
-						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_joy-con_l_sm0_lod0.dmx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "switch_tablet_bg_joy_con_r_sm0_lod0"
-						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_joy-con_r_sm0_lod0.dmx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
 						name = "switch_tablet_bg_rt_screen_sm0_lod0"
 						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_rt_screen_sm0_lod0.dmx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
@@ -516,51 +302,18 @@
 				]
 			},
 			{
-				_class = "AnimationList"
+				_class = "PhysicsShapeList"
 				children = 
 				[
 					{
-						_class = "AnimFile"
-						name = "idle"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/anim/_idle_0.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@idle_0"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/anim/_idle_0.dmx"
-						start_frame = 0
-						end_frame = 0
-						framerate = 1.0
-						reverse = false
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						faceMergeAngle = 20.0
+						maxHullVertices = 32
 					},
 				]
-				default_root_bone_name = ""
 			},
 		]
 		model_archetype = ""

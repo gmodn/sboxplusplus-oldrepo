@@ -186,42 +186,6 @@
 				]
 			},
 			{
-				_class = "BodyGroupList"
-				children = 
-				[
-					{
-						_class = "BodyGroup"
-						name = "switch_joycon_r_bg_strap_r_sm0_lod0"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"switch_joycon_r_bg_strap_r_sm0_lod0",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-					{
-						_class = "BodyGroup"
-						name = "switch_joycon_r_bg_strap_r_2_sm0_lod0"
-						children = 
-						[
-							{
-								_class = "BodyGroupChoice"
-								meshes = 
-								[
-									"switch_joycon_r_bg_strap_r_2_sm1_lod0",
-								]
-							},
-						]
-						hidden_in_tools = false
-					},
-				]
-			},
-			{
 				_class = "MaterialGroupList"
 				children = 
 				[
@@ -316,88 +280,21 @@
 							exception_list = [  ]
 						}
 					},
-					{
-						_class = "RenderMeshFile"
-						name = "switch_joycon_r_bg_strap_r_sm0_lod0"
-						filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/mesh/switch_joycon_r_bg_strap_r_sm0_lod0.dmx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
-					{
-						_class = "RenderMeshFile"
-						name = "switch_joycon_r_bg_strap_r_2_sm0_lod0"
-						filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/mesh/switch_joycon_r_bg_strap_r_2_sm0_lod0.dmx"
-						import_translation = [ 0.0, 0.0, 0.0 ]
-						import_rotation = [ 0.0, 0.0, 0.0 ]
-						import_scale = 1.0
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						parent_bone = ""
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
-					},
 				]
 			},
 			{
-				_class = "AnimationList"
+				_class = "PhysicsShapeList"
 				children = 
 				[
 					{
-						_class = "AnimFile"
-						name = "idle"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/anim/_idle_0.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@idle_0"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/anim/_idle_0.dmx"
-						start_frame = 0
-						end_frame = 0
-						framerate = 1.0
-						reverse = false
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						faceMergeAngle = 20.0
+						maxHullVertices = 32
 					},
 				]
-				default_root_bone_name = ""
 			},
 		]
 		model_archetype = ""

@@ -47,19 +47,7 @@
 				children = 
 				[
 					{
-						_class = "MaterialGroup"
-						name = "1"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/steam_deck/steam_deck.vmat"
-								to = "materials/models/unconid/steam_deck/steam_deck_1.vmat"
-							},
-						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "2"
+						_class = "DefaultMaterialGroup"
 						remaps = 
 						[
 							{
@@ -67,17 +55,8 @@
 								to = "materials/models/unconid/steam_deck/steam_deck_custom_1.vmat"
 							},
 						]
-					},
-					{
-						_class = "MaterialGroup"
-						name = "3"
-						remaps = 
-						[
-							{
-								from = "materials/models/unconid/steam_deck/steam_deck.vmat"
-								to = "materials/models/unconid/steam_deck/steam_deck_custom_2.vmat"
-							},
-						]
+						use_global_default = false
+						global_default_material = ""
 					},
 				]
 			},
@@ -127,51 +106,18 @@
 				]
 			},
 			{
-				_class = "AnimationList"
+				_class = "PhysicsShapeList"
 				children = 
 				[
 					{
-						_class = "AnimFile"
-						name = "idle"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/steam_deck/steam_deck_refs/anim/_idle_0.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 1.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@idle_0"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/unconid/steam_deck/steam_deck_refs/anim/_idle_0.dmx"
-						start_frame = 0
-						end_frame = 0
-						framerate = 1.0
-						reverse = false
+						_class = "PhysicsHullFromRender"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						faceMergeAngle = 20.0
+						maxHullVertices = 32
 					},
 				]
-				default_root_bone_name = ""
 			},
 		]
 		model_archetype = ""
