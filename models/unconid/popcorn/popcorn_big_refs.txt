@@ -1,0 +1,4 @@
+importfilelist
+{
+	"file"	"materials\models\unconid\popcorn\popcorn.vmt"
+}

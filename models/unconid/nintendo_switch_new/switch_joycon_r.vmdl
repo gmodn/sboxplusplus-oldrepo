@@ -1,0 +1,407 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BoneMarkupList"
+				bone_cull_type = "None"
+			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "bonemask_default"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "base_r"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "base_r"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "buttons_r"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "analog_stick_r"
+										origin = [ 0.001755, -1.725119, 0.300398 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_zl"
+										origin = [ 0.124198, 1.191203, -0.69596 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_l"
+										origin = [ 0.270476, 1.482866, -0.013617 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_a"
+										origin = [ 0.459472, -0.00256, 0.348915 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_y"
+										origin = [ -0.459472, -0.00256, 0.348915 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_b"
+										origin = [ 0.0, -0.462032, 0.348915 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "button_x"
+										origin = [ 0.0, 0.456913, 0.348915 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ 0.195791, 4.686232, 0.037012 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "strap_r"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "r_button_sl"
+										origin = [ -0.120205, -1.150742, -0.075585 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "r_button_sr"
+										origin = [ -0.120205, 1.347708, -0.075585 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+									{
+										_class = "Bone"
+										name = "strap_r_2"
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "strap_r_3"
+												children = 
+												[
+													{
+														_class = "Bone"
+														name = "strap_r_4"
+														children = 
+														[
+															{
+																_class = "Bone"
+																name = "strap_r_5"
+																children = 
+																[
+																	{
+																		_class = "Bone"
+																		name = "strap_r_6"
+																		children = 
+																		[
+																			{
+																				_class = "Bone"
+																				name = "strap_r_7"
+																				origin = [ 0.0, -3.022765, -0.031682 ]
+																				angles = [ -0.0, 0.0, 0.0 ]
+																				do_not_discard = true
+																			},
+																		]
+																		origin = [ 0.0, -0.705355, 0.0 ]
+																		angles = [ -0.0, 0.0, 0.0 ]
+																		do_not_discard = true
+																	},
+																]
+																origin = [ 0.005827, -1.447824, -0.054426 ]
+																angles = [ -0.0, 0.0, 0.0 ]
+																do_not_discard = true
+															},
+														]
+														origin = [ 0.0, -2.026086, -0.034028 ]
+														angles = [ -0.0, 0.0, 0.0 ]
+														do_not_discard = true
+													},
+												]
+												origin = [ -0.012868, -3.10926, -0.068626 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+										]
+										origin = [ -0.141106, -3.302427, -0.053716 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ -1.147871, 3.2, 0.0 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ 0.0, 0.0, 0.0 ]
+						angles = [ -0.0, 0.0, 89.999985 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "switch_joycon_r_bg_strap_r_sm0_lod0"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								meshes = 
+								[
+									"switch_joycon_r_bg_strap_r_sm0_lod0",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+					{
+						_class = "BodyGroup"
+						name = "switch_joycon_r_bg_strap_r_2_sm0_lod0"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								meshes = 
+								[
+									"switch_joycon_r_bg_strap_r_2_sm1_lod0",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "MaterialGroup"
+						name = "1"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_red.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_red.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_red.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_blue.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_blue.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "2"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_blue.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_red.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_red.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_blue.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r_blue.vmat"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "base_r"
+								surface_property = "plastic"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.147871, 0.0, -0.947057 ]
+								hitbox_maxs = [ 1.282634, 6.209723, 0.400016 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "switch_joycon_r_bg_mybody_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/mesh/switch_joycon_r_bg_mybody_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "switch_joycon_r_bg_strap_r_sm0_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/mesh/switch_joycon_r_bg_strap_r_sm0_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "switch_joycon_r_bg_strap_r_2_sm0_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/mesh/switch_joycon_r_bg_strap_r_2_sm0_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "idle"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/anim/_idle_0.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@idle_0"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/unconid/nintendo_switch_new/switch_joycon_r_refs/anim/_idle_0.dmx"
+						start_frame = 0
+						end_frame = 0
+						framerate = 1.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

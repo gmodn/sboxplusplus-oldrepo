@@ -1,0 +1,570 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "BoneMarkupList"
+				bone_cull_type = "None"
+			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "WeightList"
+						name = "bonemask_default"
+						default_weight = 0.0
+						weights = 
+						[
+							{
+								bone = "tablet_base"
+								weight = 1.0
+							},
+						]
+						master_morph_weight = -1.0
+						morph_weights = [  ]
+					},
+				]
+			},
+			{
+				_class = "Skeleton"
+				children = 
+				[
+					{
+						_class = "Bone"
+						name = "tablet_base"
+						children = 
+						[
+							{
+								_class = "Bone"
+								name = "gamecard_top"
+								origin = [ 3.862808, 6.137954, -0.403297 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "back_stand"
+								origin = [ 3.964679, 3.958218, -0.475796 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "joy_con_l"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "buttons_l"
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "button_zr"
+												origin = [ -0.119525, 2.993416, -0.608755 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_r"
+												origin = [ -0.299424, 3.1247, -0.013617 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_right"
+												origin = [ 0.459472, -0.002559, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_left"
+												origin = [ -0.459472, -0.002559, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_down"
+												origin = [ 0.0, -0.462032, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_up"
+												origin = [ 0.0, 0.456913, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "analog_stick_l"
+												origin = [ 0.0, 1.715428, 0.300398 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+										]
+										origin = [ -0.199481, 2.935163, 0.037012 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ -6.036899, 0.015114, -0.00963 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+							{
+								_class = "Bone"
+								name = "joy_com_r"
+								children = 
+								[
+									{
+										_class = "Bone"
+										name = "buttons_r"
+										children = 
+										[
+											{
+												_class = "Bone"
+												name = "analog_stick_r"
+												origin = [ 0.001755, -1.725119, 0.300398 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_zl"
+												origin = [ 0.124198, 1.191203, -0.69596 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_l"
+												origin = [ 0.270475, 1.482866, -0.013617 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_a"
+												origin = [ 0.459472, -0.00256, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_y"
+												origin = [ -0.459472, -0.00256, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_b"
+												origin = [ 0.0, -0.462031, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+											{
+												_class = "Bone"
+												name = "button_x"
+												origin = [ 0.0, 0.456913, 0.348915 ]
+												angles = [ -0.0, 0.0, 0.0 ]
+												do_not_discard = true
+											},
+										]
+										origin = [ 0.195791, 4.686232, 0.037012 ]
+										angles = [ -0.0, 0.0, 0.0 ]
+										do_not_discard = true
+									},
+								]
+								origin = [ 6.061135, 0.014469, -0.009037 ]
+								angles = [ -0.0, 0.0, 0.0 ]
+								do_not_discard = true
+							},
+						]
+						origin = [ 0.0, 0.0, 0.0 ]
+						angles = [ -0.0, 0.0, 89.999985 ]
+						do_not_discard = true
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "BodyGroup"
+						name = "switch_tablet_bg_joy_con_l_sm0_lod0"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								meshes = 
+								[
+									"switch_tablet_bg_joy-con_l_sm0_lod0",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+					{
+						_class = "BodyGroup"
+						name = "switch_tablet_bg_joy_con_r_sm0_lod0"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								meshes = 
+								[
+									"switch_tablet_bg_joy-con_r_sm0_lod0",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+					{
+						_class = "BodyGroup"
+						name = "switch_tablet_bg_rt_screen_sm0_lod0"
+						children = 
+						[
+							{
+								_class = "BodyGroupChoice"
+								meshes = 
+								[
+									"switch_tablet_bg_rt_screen_sm1_lod0",
+								]
+							},
+						]
+						hidden_in_tools = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "MaterialGroup"
+						name = "1"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "2"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "3"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "4"
+						remaps = 
+						[
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_l.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_joycon_r2.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/rt_screen_tablet.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_green_screen.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_zelda.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_mario.vmat"
+							},
+							{
+								from = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+								to = "materials/models/unconid/nintendo_switch_new/n_switch_tablet_env.vmat"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								parent_bone = "joy_con_l"
+								surface_property = "plastic"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -1.285176, 0.0, -0.947057 ]
+								hitbox_maxs = [ 0.948209, 6.209724, 0.410334 ]
+							},
+							{
+								_class = "Hitbox"
+								parent_bone = "joy_com_r"
+								surface_property = "plastic"
+								translation_only = false
+								group_id = 0
+								hitbox_mins = [ -0.950751, 0.0, -0.947057 ]
+								hitbox_maxs = [ 1.282634, 6.209724, 0.400016 ]
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						name = "switch_tablet_bg_mybody_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_mybody_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "switch_tablet_bg_joy_con_l_sm0_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_joy-con_l_sm0_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "switch_tablet_bg_joy_con_r_sm0_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_joy-con_r_sm0_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						name = "switch_tablet_bg_rt_screen_sm0_lod0"
+						filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/mesh/switch_tablet_bg_rt_screen_sm0_lod0.dmx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.0
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "idle"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = "bonemask_default"
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/anim/_idle_0.dmx"
+						start_frame = -1
+						end_frame = -1
+						framerate = 1.0
+						reverse = false
+					},
+					{
+						_class = "AnimFile"
+						name = "@idle_0"
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = false
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/unconid/nintendo_switch_new/switch_tablet_refs/anim/_idle_0.dmx"
+						start_frame = 0
+						end_frame = 0
+						framerate = 1.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}

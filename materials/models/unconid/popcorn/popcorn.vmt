@@ -1,0 +1,22 @@
+"vertexlitgeneric"
+{
+	"$basetexture"	 "models\unconid\popcorn\popcorn_box"
+	$bumpmap	 "models\unconid\popcorn\popcorn_box_normal"
+
+	$BasemapAlphaPhongMask "1"
+	"$phong"     "1"
+	"$phongexponent"  "17"
+	"$phongboost"   ".5"
+	"$phongfresnelranges"   "[1 9 3]"
+	"$phongalbedotint" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "30"
+	"$rimlightboost" "0.1"
+	
+	
+
+	
+}
+
+

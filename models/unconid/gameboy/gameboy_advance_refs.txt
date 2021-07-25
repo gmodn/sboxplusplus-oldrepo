@@ -1,0 +1,11 @@
+importfilelist
+{
+	"file"	"materials\models\unconid\gameboy\gba.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_screen.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_cartridge_label.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_cartridge.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_screen_main.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_screen_zelda.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_screen_castlevania.vmt"
+	"file"	"materials\models\unconid\gameboy\gba_screen_green.vmt"
+}

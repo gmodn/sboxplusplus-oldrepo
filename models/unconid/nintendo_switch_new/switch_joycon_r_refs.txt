@@ -1,0 +1,7 @@
+importfilelist
+{
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_r2.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_r.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_r_red.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_r_blue.vmt"
+}

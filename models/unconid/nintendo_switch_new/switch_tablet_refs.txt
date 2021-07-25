@@ -1,0 +1,11 @@
+importfilelist
+{
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_tablet.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_l.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_joycon_r2.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\rt_screen_tablet.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_tablet_green_screen.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_tablet_zelda.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_tablet_mario.vmt"
+	"file"	"materials\models\unconid\nintendo_switch_new\n_switch_tablet_env.vmt"
+}
