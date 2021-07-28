@@ -1,6 +1,0 @@
-importfilelist
-{
-	"file"	"materials\models\unconid\umbrella\umbrella.vmt"
-	"file"	"materials\models\unconid\umbrella\umbrella_paintable.vmt"
-	"file"	"materials\models\unconid\umbrella\umbrella_pika.vmt"
-}

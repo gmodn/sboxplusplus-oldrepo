@@ -1,4 +1,0 @@
-importfilelist
-{
-	"file"	"materials\models\unconid\wii\wii_controller.vmt"
-}

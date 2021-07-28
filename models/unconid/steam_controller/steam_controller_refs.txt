@@ -1,4 +1,0 @@
-importfilelist
-{
-	"file"	"materials\models\unconid\steam_controller\steam_controller_f.vmt"
-}

@@ -1,7 +1,0 @@
-importfilelist
-{
-	"file"	"materials\models\unconid\steam_deck\steam_deck.vmt"
-	"file"	"materials\models\unconid\steam_deck\steam_deck_1.vmt"
-	"file"	"materials\models\unconid\steam_deck\steam_deck_custom_1.vmt"
-	"file"	"materials\models\unconid\steam_deck\steam_deck_custom_2.vmt"
-}

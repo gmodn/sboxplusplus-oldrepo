@@ -1,5 +1,0 @@
-importfilelist
-{
-	"file"	"materials\models\unconid\popcorn\popcorn.vmt"
-	"file"	"materials\models\unconid\popcorn\popcorn_box_2.vmt"
-}
