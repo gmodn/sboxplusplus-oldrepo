@@ -1,6 +1,6 @@
 ﻿namespace Sandbox.Tools
 {
-	[Library( "tool_glizzygun", Title = "Glizzy Gun", Description = "You're Favorite", Group = "fun" )]
+	[Library( "tool_glizzygun", Title = "Glizzy Gun", Description = "Your Favorite!", Group = "fun" )]
 	public class GlizyGun : BaseTool
 	{
 		TimeSince timeSinceShoot;
