@@ -1,4 +1,4 @@
-﻿using Sandbox;
+﻿ using Sandbox;
 using System;
 
 [Library( "ent_glizzy", Title = "Glizzy", Spawnable = true )]

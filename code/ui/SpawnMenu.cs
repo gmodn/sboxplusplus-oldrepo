@@ -38,6 +38,7 @@ public partial class SpawnMenu : Panel
 			var tabs = right.Add.Panel( "tabs" );
 			{
 				tabs.Add.Button( "Tools" ).AddClass( "active" );
+				tabs.Add.Button( "Utility" );
 			}
 			var body = right.Add.Panel( "body" );
 			{
@@ -67,7 +68,6 @@ public partial class SpawnMenu : Panel
 
 	}
 
-	//le old ass s&box col
 	public override void Tick()
 	{
 		base.Tick();

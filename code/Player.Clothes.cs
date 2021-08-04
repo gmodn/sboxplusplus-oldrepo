@@ -86,7 +86,21 @@ partial class SandboxPlayer
 		{
 			var model = Rand.FromArray( new[]
 			{
-				"models/sboxhardhatbase.vmdl",
+				"models/citizen_clothes/hat/hat_hardhat.vmdl",
+				"models/citizen_clothes/hat/hat_woolly.vmdl",
+				"models/citizen_clothes/hat/hat_securityhelmet.vmdl",
+				"models/citizen_clothes/hair/hair_malestyle02.vmdl",
+				"models/citizen_clothes/hair/hair_femalebun.black.vmdl",
+				"models/citizen_clothes/hat/hat_beret.red.vmdl",
+				"models/citizen_clothes/hat/hat.tophat.vmdl",
+				"models/citizen_clothes/hat/hat_beret.black.vmdl",
+				"models/citizen_clothes/hat/hat_cap.vmdl",
+				"models/citizen_clothes/hat/hat_leathercap.vmdl",
+				"models/citizen_clothes/hat/hat_leathercapnobadge.vmdl",
+				"models/citizen_clothes/hat/hat_securityhelmetnostrap.vmdl",
+				"models/citizen_clothes/hat/hat_service.vmdl",
+				"models/citizen_clothes/hat/hat_uniform.police.vmdl",
+				"models/citizen_clothes/hat/hat_woollybobble.vmdl",
 			} );
 
 			hat = new ModelEntity();

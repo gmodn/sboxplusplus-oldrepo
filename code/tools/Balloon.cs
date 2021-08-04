@@ -89,7 +89,7 @@
 				rope.SetEntity( 0, ent );
 
 				var attachEnt = tr.Body.IsValid() ? tr.Body.Entity : tr.Entity;
-				var attachLocalPos = tr.Body.Transform.PointToLocal( tr.EndPos );
+				var attachLocalPos = tr.Body.Transform.PointToLocal( tr.EndPos ) * (1.0f / tr.Entity.Scale);
 
 				if ( attachEnt.IsWorld )
 				{
@@ -100,19 +100,23 @@
 					rope.SetEntityBone( 1, attachEnt, tr.Bone, new Transform( attachLocalPos ) );
 				}
 
-				ent.AttachRope = rope;
-
-				ent.AttachJoint = PhysicsJoint.Spring
+				var spring = PhysicsJoint.Spring
 					.From( ent.PhysicsBody )
-					.To( tr.Body )
-					.WithPivot( tr.EndPos )
+					.To( tr.Body, tr.Body.Transform.PointToLocal( tr.EndPos ) )
 					.WithFrequency( 5.0f )
 					.WithDampingRatio( 0.7f )
-					.WithReferenceMass( 0 )
+					.WithReferenceMass( ent.PhysicsBody.Mass )
 					.WithMinRestLength( 0 )
 					.WithMaxRestLength( 100 )
 					.WithCollisionsEnabled()
 					.Create();
+
+				spring.EnableAngularConstraint = false;
+				spring.OnBreak( () =>
+				{
+					rope?.Destroy( true );
+					spring.Remove();
+				} );
 			}
 		}
 	}

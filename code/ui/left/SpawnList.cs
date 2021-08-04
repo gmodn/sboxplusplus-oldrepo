@@ -33,6 +33,5 @@ public partial class SpawnList : Panel
 
 			Canvas.AddItem( file.Remove( file.Length - 6 ) );
 		}
-		
 	}
 }

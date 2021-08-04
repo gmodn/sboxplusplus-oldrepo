@@ -9,9 +9,9 @@ partial class SandboxPlayer : Player
 
 	[Net] public PawnController VehicleController { get; set; }
 	[Net] public PawnAnimator VehicleAnimator { get; set; }
-	[Net] public ICamera VehicleCamera { get; set; }
-	[Net] public Entity Vehicle { get; set; }
-	[Net] public ICamera MainCamera { get; set; }
+	[Net, Predicted] public ICamera VehicleCamera { get; set; }
+	[Net, Predicted] public Entity Vehicle { get; set; }
+	[Net, Predicted] public ICamera MainCamera { get; set; }
 
 	public ICamera LastCamera { get; set; }
 
@@ -62,16 +62,8 @@ partial class SandboxPlayer : Player
 	public override void OnKilled()
 	{
 		base.OnKilled();
-		PlaySound("hl2death");
-		Log.Info("Death was found.");
 
 		if ( lastDamage.Flags.HasFlag( DamageFlags.Vehicle ) )
-		{
-			Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", lastDamage.Position );
-			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
-			PlaySound( "kersplat" );
-		}
-		if ( lastDamage.Flags.HasFlag( DamageFlags.PhysicsImpact ) )
 		{
 			Particles.Create( "particles/impact.flesh.bloodpuff-big.vpcf", lastDamage.Position );
 			Particles.Create( "particles/impact.flesh-big.vpcf", lastDamage.Position );
@@ -113,7 +105,6 @@ partial class SandboxPlayer : Player
 	[ClientRpc]
 	public void TookDamage( DamageFlags damageFlags, Vector3 forcePos, Vector3 force )
 	{
-	
 	}
 
 	public override PawnController GetActiveController()

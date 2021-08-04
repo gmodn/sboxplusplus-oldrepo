@@ -54,9 +54,9 @@
 						parent_bone = ""
 						surface_prop = "wood"
 						collision_prop = "default"
-						origin = [ -1.251464, -0.181282, 19.259325 ]
+						origin = [ -1.251464, -0.181282, 20.838181 ]
 						angles = [ 0.0, 0.0, 0.0 ]
-						dimensions = [ 35.253082, 35.546982, 38.132793 ]
+						dimensions = [ 35.253082, 35.546982, 34.975082 ]
 					},
 				]
 			},

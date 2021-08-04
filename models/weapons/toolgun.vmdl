@@ -137,7 +137,7 @@
 						collision_prop = "default"
 						recenter_on_parent_bone = true
 						offset_origin = [ 0.0, 0.0, 0.0 ]
-						offset_angles = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ 0.0, 90.0, 0.0 ]
 						filename = "models/weapons/toolgun_refs/phys/w_toolgun_phy.dmx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0

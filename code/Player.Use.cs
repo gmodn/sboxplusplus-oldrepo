@@ -2,7 +2,7 @@
 
 partial class SandboxPlayer
 {
-	protected bool IsUseDisabled()
+	public bool IsUseDisabled()
 	{
 		return ActiveChild is IUse use && use.IsUsable( this );
 	}

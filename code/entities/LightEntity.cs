@@ -3,9 +3,6 @@
 [Library( "ent_light", Title = "Light", Spawnable = true )]
 public partial class LightEntity : PointLightEntity, IUse
 {
-	public PhysicsJoint AttachJoint;
-	public Particles AttachRope;
-
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -32,20 +29,5 @@ public partial class LightEntity : PointLightEntity, IUse
 	{
 		PhysicsGroup?.Wake();
 		Delete();
-	}
-
-	protected override void OnDestroy()
-	{
-		base.OnDestroy();
-
-		if ( AttachJoint.IsValid() )
-		{
-			AttachJoint.Remove();
-		}
-
-		if ( AttachRope != null )
-		{
-			AttachRope.Destroy( true );
-		}
 	}
 }

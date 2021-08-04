@@ -203,7 +203,7 @@ public partial class CarEntity : Prop, IUse
 
 			if ( Input.Pressed( InputButton.Use ) )
 			{
-				if ( owner.Pawn is SandboxPlayer player )
+				if ( owner.Pawn is SandboxPlayer player && !player.IsUseDisabled() )
 				{
 					RemoveDriver( player );
 
