@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "ent_radio", Title = "Radio", Spawnable = true )]
+[Library( "ent_radio", Title = "Portal Radio", Spawnable = true )]
 public partial class RadioEntity : Prop, IUse
 {
 

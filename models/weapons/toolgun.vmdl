@@ -137,7 +137,7 @@
 						collision_prop = "default"
 						recenter_on_parent_bone = true
 						offset_origin = [ 0.0, 0.0, 0.0 ]
-						offset_angles = [ 0.0, 90.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
 						filename = "models/weapons/toolgun_refs/phys/w_toolgun_phy.dmx"
 						import_scale = 1.0
 						faceMergeAngle = 10.0
@@ -232,102 +232,6 @@
 						}
 					},
 				]
-			},
-			{
-				_class = "AnimationList"
-				children = 
-				[
-					{
-						_class = "AnimFile"
-						name = "idle"
-						activity_name = "ACT_VM_IDLE"
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = true
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_idle_0.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 30.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "attack1"
-						children = 
-						[
-							{
-								_class = "AnimEvent"
-								event_class = "AE_CL_NPC_MUZZLEFLASH0"
-								event_frame = 0
-								event_keys = null
-							},
-						]
-						activity_name = "ACT_RANGE_ATTACK_PISTOL"
-						activity_weight = 1
-						weight_list_name = "bonemask_default"
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_attack1_1.dmx"
-						start_frame = -1
-						end_frame = -1
-						framerate = 30.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@idle_0"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_idle_0.dmx"
-						start_frame = 0
-						end_frame = 1
-						framerate = 30.0
-						reverse = false
-					},
-					{
-						_class = "AnimFile"
-						name = "@attack1_1"
-						activity_name = ""
-						activity_weight = 1
-						weight_list_name = ""
-						fade_in_time = 0.2
-						fade_out_time = 0.2
-						looping = false
-						delta = false
-						worldSpace = false
-						hidden = false
-						anim_markup_ordered = false
-						disable_compression = false
-						source_filename = "models/weapons/toolgun_refs/anim/_attack1_1.dmx"
-						start_frame = 0
-						end_frame = 1
-						framerate = 30.0
-						reverse = false
-					},
-				]
-				default_root_bone_name = ""
 			},
 		]
 		model_archetype = ""

@@ -19,7 +19,7 @@
 							},
 							{
 								from = "primary_white.vmat"
-								to = "materials/dev/primary_white.vmat"
+								to = "materials/dev/reflectivity_90b.vmat"
 							},
 						]
 						use_global_default = false
