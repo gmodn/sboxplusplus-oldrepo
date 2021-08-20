@@ -133,7 +133,7 @@
 						_class = "PhysicsHullFile"
 						name = "w_357_0_mesh"
 						parent_bone = ""
-						surface_prop = "default"
+						surface_prop = "metal.weapon"
 						collision_prop = "default"
 						recenter_on_parent_bone = true
 						offset_origin = [ 0.0, 0.0, 0.0 ]
