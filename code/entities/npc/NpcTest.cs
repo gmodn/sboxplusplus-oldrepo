@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-[Library( "npc_test", Title = "Basic Npc Test", Spawnable = true, Group = "NPC" )]
+[Library( "npc_test", Title = "Basic Npc Test", Spawnable = true, Group = "Experimental" )]
 public partial class NpcTest : AnimEntity
 {
 	[ConVar.Replicated]

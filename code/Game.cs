@@ -89,6 +89,12 @@ partial class SandboxGame : Game
 		//Log.Info( $"ent: {ent}" );
 	}
 
+	[ClientCmd("garry")]
+	public static async void Garry()
+	{
+			
+	}
+
 	public override void DoPlayerNoclip( Client player )
 	{
 		if ( player.Pawn is Player basePlayer )
