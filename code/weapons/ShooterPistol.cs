@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 
 [Library( "weapon_shooterpistol", Title = "Shooter Demo Pistol", Spawnable = true )]
 partial class ShooterPistol : Weapon
@@ -31,7 +31,7 @@ partial class ShooterPistol : Weapon
 		(Owner as AnimEntity)?.SetAnimBool( "b_attack", true );
 
 		ShootEffects();
-		PlaySound( "rust_pistol.shoot" );
+		PlaySound( "shooterpistol_shoot" );
 		ShootBullet( 0.05f, 1.5f, 9.0f, 3.0f );
 	}
 
