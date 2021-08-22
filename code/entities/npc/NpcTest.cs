@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-[Library( "npc_test", Title = "Basic Npc Test", Spawnable = true, Group = "Experimental" )]
+[Library( "npc_test", Title = "Npc Test", Spawnable = true, Group = "NPC" )]
 public partial class NpcTest : AnimEntity
 {
 	[ConVar.Replicated]
@@ -18,7 +18,7 @@ public partial class NpcTest : AnimEntity
 			npc.Delete();
 	}
 
-	float Speed;	
+	float Speed;
 
 	NavPath Path = new NavPath();
 	public NavSteer Steer;
@@ -39,7 +39,6 @@ public partial class NpcTest : AnimEntity
 		new ModelEntity( "models/citizen_clothes/trousers/trousers.smart.vmdl", this );
 		new ModelEntity( "models/citizen_clothes/jacket/labcoat.vmdl", this );
 		new ModelEntity( "models/citizen_clothes/shirt/shirt_longsleeve.scientist.vmdl" , this );
-		new ModelEntity( "models/sboxhardhatbase.vmdl", this);
 
 		if ( Rand.Int(3) == 1 )
 		{

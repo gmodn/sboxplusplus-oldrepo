@@ -59,40 +59,7 @@ partial class NPCPistol : Weapon
 
 	public override void AttackSecondary()
 	{
-		if (!Host.IsServer) return;
 
-		var HasLos = true;
-		var SpawnPos = Position;
-		var Tries = 0;
-
-		while (HasLos && Tries <= 50)
-		{
-			Tries += 1;
-			var t = NavMesh.GetPointWithinRadius(Position, 1000, 4000);
-			if (t.HasValue)
-			{
-				SpawnPos = t.Value;
-				var AddHeight = new Vector3(0, 0, 70);
-
-				var PlayerPos = Owner.EyePos;
-				var tr = Trace.Ray(SpawnPos + AddHeight, PlayerPos)
-							.UseHitboxes()
-							.Run();
-
-				if (Vector3.DistanceBetween(tr.EndPos, PlayerPos) > 100)
-				{
-					HasLos = false;
-					//Log.Info("no los");
-					//var npc1 = new NpcTest{Position = tr.EndPos,};
-				}
-				else
-				{
-					Log.Warning("Can't Find Valid Zombie Spawn");
-				}
-
-
-			}
-		}
 	}
 
 	private void Discharge()
