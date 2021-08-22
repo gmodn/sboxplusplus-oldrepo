@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-[Library( "weapon_npc", Title = "NPC Test Pistol", Spawnable = false )]
+[Library( "weapon_npc", Title = "weapon_npc", Spawnable = false )]
 partial class NPCPistol : Weapon
 {
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
