@@ -24,7 +24,7 @@ public partial class GravGun : Carriable
 	protected virtual float PullForce => 20.0f;
 	protected virtual float PushForce => 1000.0f;
 	protected virtual float ThrowForce => 2000.0f;
-	protected virtual float HoldDistance => 60.0f;
+	protected virtual float HoldDistance => 100.0f;
 	protected virtual float AttachDistance => 150.0f;
 	protected virtual float DropCooldown => 0.5f;
 	protected virtual float BreakLinearForce => 2000.0f;
@@ -95,7 +95,7 @@ public partial class GravGun : Carriable
 
 			var tr = Trace.Ray(eyePos, eyePos + eyeDir * MaxPullDistance)
 				.UseHitboxes()
-				.Ignore(owner)
+				.Ignore(owner, false)
 				.Radius(2.0f)
 				.HitLayer(CollisionLayer.Debris)
 				.Run();
@@ -180,7 +180,6 @@ public partial class GravGun : Carriable
 		{
 			Deactivate();
 		}
-
 	}
 
 	protected override void OnDestroy()
@@ -240,8 +239,6 @@ public partial class GravGun : Carriable
 
 		var client = GetClientOwner();
 		client?.Pvs.Add(HeldEntity);
-
-		PlaySound("physcannon_startcarry");
 	}
 
 	private void GrabEnd()
@@ -260,16 +257,11 @@ public partial class GravGun : Carriable
 		{
 			var client = GetClientOwner();
 			client?.Pvs.Remove(HeldEntity);
-
-			HeldEntity.GlowActive = false;
-			HeldEntity.GlowState = GlowStates.GlowStateOff;
 		}
 
 		HeldBody = null;
 		HeldRot = Rotation.Identity;
 		HeldEntity = null;
-
-		PlaySound("physcannon_carryend");
 	}
 
 	private void GrabMove(Vector3 startPos, Vector3 dir, Rotation rot)
