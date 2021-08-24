@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-[Library( "ent_car", Title = "Car", Spawnable = true )]
+[Library( "vehicle_car", Title = "Car", Spawnable = true )]
 public partial class CarEntity : Prop, IUse
 {
 	[ConVar.Replicated( "debug_car" )]

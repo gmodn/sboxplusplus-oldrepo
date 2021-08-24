@@ -30,6 +30,12 @@ public partial class SpawnMenu : Panel
 
 				var ents = body.AddChild<EntityList>();
 				tabs.AddButtonActive( "Entities", ( b ) => ents.SetClass( "active", b ) );
+				
+				var cars = body.AddChild<VehicleList>();
+				tabs.AddButtonActive( "Vehicles", ( b ) => cars.SetClass( "active", b ) );
+				
+				var guns = body.AddChild<VehicleList>();
+				tabs.AddButtonActive( "Weapons", ( b ) => cars.SetClass( "active", b ) );
 			}
 		}
 
@@ -37,7 +43,11 @@ public partial class SpawnMenu : Panel
 		{
 			var tabs = right.Add.Panel( "tabs" );
 			{
+<<<<<<< Updated upstream
 				tabs.Add.Button( "Tools" ).AddClass( "active" );
+=======
+				tabs.Add.Button( "s&box tools" ).AddClass( "active" );
+>>>>>>> Stashed changes
 			}
 			var body = right.Add.Panel( "body" );
 			{
@@ -67,7 +77,11 @@ public partial class SpawnMenu : Panel
 
 	}
 
+<<<<<<< Updated upstream
 	//le old ass s&box col
+=======
+	
+>>>>>>> Stashed changes
 	public override void Tick()
 	{
 		base.Tick();

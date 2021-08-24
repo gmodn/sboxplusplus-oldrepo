@@ -451,7 +451,7 @@
 // 
 // CarEntity : Sandbox.Prop 
 // 
-@PointClass model() = ent_car : ""
+@PointClass model() = vehicle_car : ""
 [
 	model(studio) [report]: "World Model" : "" : "The model this entity should use."
 	skin(materialgroup) [ group="Render Properties" ] : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
