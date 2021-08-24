@@ -35,7 +35,7 @@ public partial class SpawnMenu : Panel
 				tabs.AddButtonActive( "Vehicles", ( b ) => cars.SetClass( "active", b ) );
 				
 				var guns = body.AddChild<WeaponList>();
-				tabs.AddButtonActive( "Weapons", ( b ) => cars.SetClass( "active", b ) );
+				tabs.AddButtonActive( "Weapons", ( b ) => guns.SetClass( "active", b ) );
 			}
 		}
 
