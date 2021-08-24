@@ -71,12 +71,7 @@ public partial class SpawnMenu : Panel
 		}
 
 	}
-
-<<<<<<< Updated upstream
-	//le old ass s&box col
-=======
 	
->>>>>>> Stashed changes
 	public override void Tick()
 	{
 		base.Tick();
