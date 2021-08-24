@@ -40,11 +40,9 @@ public partial class SpawnMenu : Panel
 		{
 			var tabs = right.Add.Panel( "tabs" );
 			{
-<<<<<<< Updated upstream
 				tabs.Add.Button( "Tools" ).AddClass( "active" );
-=======
+				
 				tabs.Add.Button( "s&box tools" ).AddClass( "active" );
->>>>>>> Stashed changes
 			}
 			var body = right.Add.Panel( "body" );
 			{
