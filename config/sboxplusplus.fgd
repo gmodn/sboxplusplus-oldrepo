@@ -1,5 +1,5 @@
 // 
-// SandboxGame : Sandbox.Game 
+// SandboxGame
 // 
 @PointClass = sandbox : ""
 [
@@ -9,7 +9,7 @@
 ]
 
 // 
-// Tool : Carriable 
+// Tool
 // 
 @PointClass = weapon_tool : ""
 [
@@ -21,7 +21,7 @@
 ]
 
 // 
-// BalloonEntity : Sandbox.Prop 
+// BalloonEntity
 // 
 @PointClass model() = ent_balloon : ""
 [
@@ -32,7 +32,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -48,7 +49,7 @@
 ]
 
 // 
-// BouncyBallEntity : Sandbox.Prop 
+// BouncyBallEntity
 // 
 @PointClass model() = ent_bouncyball : ""
 [
@@ -59,7 +60,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -75,7 +77,7 @@
 ]
 
 // 
-// DirectionalGravity : Sandbox.Prop 
+// DirectionalGravity
 // 
 @PointClass model() = directional_gravity : ""
 [
@@ -86,7 +88,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -102,7 +105,7 @@
 ]
 
 // 
-// DroneEntity : Sandbox.Prop 
+// DroneEntity
 // 
 @PointClass model() = ent_drone : ""
 [
@@ -113,7 +116,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -129,7 +133,7 @@
 ]
 
 // 
-// GlizzyEntity : Sandbox.Prop 
+// GlizzyEntity
 // 
 @PointClass model() = ent_glizzy : ""
 [
@@ -140,7 +144,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -156,7 +161,7 @@
 ]
 
 // 
-// GoldenGlizzyEntity : Sandbox.Prop 
+// GoldenGlizzyEntity
 // 
 @PointClass model() = ent_goldenglizzy : ""
 [
@@ -167,7 +172,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -183,7 +189,7 @@
 ]
 
 // 
-// LampEntity : Sandbox.SpotLightEntity 
+// LampEntity
 // 
 @PointClass = ent_lamp : ""
 [
@@ -202,7 +208,7 @@
 ]
 
 // 
-// LightEntity : Sandbox.PointLightEntity 
+// LightEntity
 // 
 @PointClass = ent_light : ""
 [
@@ -221,7 +227,7 @@
 ]
 
 // 
-// NoiseTest : Sandbox.Prop 
+// NoiseTest
 // 
 @PointClass model() = noise_test : ""
 [
@@ -232,7 +238,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -248,7 +255,7 @@
 ]
 
 // 
-// RadioEntity : Sandbox.Prop 
+// RadioEntity
 // 
 @PointClass model() = ent_radio : ""
 [
@@ -259,7 +266,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -275,7 +283,35 @@
 ]
 
 // 
-// TextScreen : Sandbox.Prop 
+// KeyEntity
+// 
+@PointClass model() = ent_sboxkey : ""
+[
+	model(studio) [report]: "World Model" : "" : "The model this entity should use."
+	skin(materialgroup) [ group="Render Properties" ] : "Skin" : "default" : "Some models have multiple versions of their textures, called skins." 
+	bodygroups(bodygroupchoices) [ group="Render Properties" ] : "Body Groups" : "" : "Some models have multiple variations of certain items, such as characters having different hair styles, etc."
+	rendercolor(color255) : "FX Color (R G B)" : "255 255 255" : "The FX color is used by the selected Render Mode."
+	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
+		-1 : "UNUSED"
+		0 : "COLLISION GROUP ALWAYS"
+		1 : "COLLISION GROUP NONPHYSICAL"
+		4 : "COLLISION GROUP DEFAULT"
+		5 : "COLLISION GROUP DEBRIS"
+		14 : "COLLISION GROUP WEAPON"
+	]
+	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
+
+	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
+
+	output OnDamaged(void) : "Fired when the entity gets damaged"
+]
+
+// 
+// TextScreen
 // 
 @PointClass model() = ent_textscreen : ""
 [
@@ -286,7 +322,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -302,7 +339,7 @@
 ]
 
 // 
-// ThrusterEntity : Sandbox.Prop 
+// ThrusterEntity
 // 
 @PointClass model() = ent_thruster : ""
 [
@@ -313,7 +350,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -329,7 +367,7 @@
 ]
 
 // 
-// WheelEntity : Sandbox.Prop 
+// WheelEntity
 // 
 @PointClass model() = ent_wheel : ""
 [
@@ -340,7 +378,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -356,7 +395,7 @@
 ]
 
 // 
-// GravGun : Carriable 
+// GravGun
 // 
 @PointClass = gravgun : ""
 [
@@ -368,7 +407,7 @@
 ]
 
 // 
-// PhysGun : Carriable 
+// PhysGun
 // 
 @PointClass = physgun : ""
 [
@@ -380,7 +419,7 @@
 ]
 
 // 
-// Sexyness : Weapon 
+// Sexyness
 // 
 @PointClass = weapon_admingun : ""
 [
@@ -392,7 +431,7 @@
 ]
 
 // 
-// Crowbar : Weapon 
+// Crowbar
 // 
 @PointClass = weapon_crowbar : ""
 [
@@ -404,7 +443,7 @@
 ]
 
 // 
-// Hands : Weapon 
+// Hands
 // 
 @PointClass = weapon_hands : ""
 [
@@ -416,7 +455,7 @@
 ]
 
 // 
-// Flashlight : Weapon 
+// Flashlight
 // 
 @PointClass = weapon_flashlight : ""
 [
@@ -428,7 +467,7 @@
 ]
 
 // 
-// FlightGun : Weapon 
+// FlightGun
 // 
 @PointClass = weapon_flightgun : ""
 [
@@ -440,7 +479,7 @@
 ]
 
 // 
-// MP5 : Weapon 
+// MP5
 // 
 @PointClass = weapon_mp5 : ""
 [
@@ -452,7 +491,7 @@
 ]
 
 // 
-// Pistol : Weapon 
+// Pistol
 // 
 @PointClass = weapon_pistol : ""
 [
@@ -464,19 +503,7 @@
 ]
 
 // 
-// NPCPistol : Weapon 
-// 
-@PointClass = weapon_npc : ""
-[
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
-]
-
-// 
-// ShooterPistol : Weapon 
+// ShooterPistol
 // 
 @PointClass = weapon_shooterpistol : ""
 [
@@ -488,7 +515,7 @@
 ]
 
 // 
-// Shotgun : Weapon 
+// Shotgun
 // 
 @PointClass = weapon_shotgun : ""
 [
@@ -500,7 +527,7 @@
 ]
 
 // 
-// SMG : Weapon 
+// SMG
 // 
 @PointClass = weapon_smg : ""
 [
@@ -512,7 +539,7 @@
 ]
 
 // 
-// CarEntity : Sandbox.Prop 
+// CarEntity
 // 
 @PointClass model() = ent_car : ""
 [
@@ -523,7 +550,8 @@
 	renderamt(integer) [ group="Render Properties" ] : "FX Amount (0 - 255)" : 255 : "The FX amount is used by the selected Render Mode."
 	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
 	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" = [
+	collisiongroupoverride(choices) : "Collision Group Override" : -1 : "" =
+	[
 		-1 : "UNUSED"
 		0 : "COLLISION GROUP ALWAYS"
 		1 : "COLLISION GROUP NONPHYSICAL"
@@ -536,17 +564,5 @@
 	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 
 	output OnDamaged(void) : "Fired when the entity gets damaged"
-]
-
-// 
-// NpcTest : Sandbox.AnimEntity 
-// 
-@PointClass = npc_test : ""
-[
-	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
-	parentname(target_destination) [ group="Hierarchy" ] : "Parent" : : "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent."
-	enable_shadows(boolean) [ group="Render Properties" ] : "Shadow Casting" : 1 : "Whether this entity should cast shadows or not"
-
-	input SetColor(string) : "Sets the color of this entity. Format is '255 255 255 255'."
 ]
 

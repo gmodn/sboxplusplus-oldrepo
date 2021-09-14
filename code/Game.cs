@@ -15,7 +15,7 @@ partial class SandboxGame : Game
 	public override void ClientJoined( Client cl )
 	{
 		base.ClientJoined( cl );
-		var player = new SandboxPlayer();
+		var player = new SandboxPlayer( cl );
 		player.Respawn();
 
 		cl.Pawn = player;
@@ -37,24 +37,13 @@ partial class SandboxGame : Game
 		var tr = Trace.Ray( owner.EyePos, owner.EyePos + owner.EyeRot.Forward * 500 )
 			.UseHitboxes()
 			.Ignore( owner )
-			.Size( 2 )
 			.Run();
 
 		var ent = new Prop();
 		ent.Position = tr.EndPos;
 		ent.Rotation = Rotation.From( new Angles( 0, owner.EyeRot.Angles().yaw, 0 ) ) * Rotation.FromAxis( Vector3.Up, 180 );
 		ent.SetModel( modelname );
-
-		// Drop to floor
-		if ( ent.PhysicsBody != null && ent.PhysicsGroup.BodyCount == 1 )
-		{
-			var p = ent.PhysicsBody.FindClosestPoint( tr.EndPos );
-
-			var delta = p - tr.EndPos;
-			ent.PhysicsBody.Position -= delta;
-			//DebugOverlay.Line( p, tr.EndPos, 10, false );
-		}
-
+		ent.Position = tr.EndPos - Vector3.Up * ent.CollisionBounds.Mins.z;
 	}
 
 	[ServerCmd( "spawn_entity" )]
@@ -89,12 +78,6 @@ partial class SandboxGame : Game
 		//Log.Info( $"ent: {ent}" );
 	}
 
-	[ClientCmd("garry")]
-	public static async void Garry()
-	{
-			
-	}
-
 	public override void DoPlayerNoclip( Client player )
 	{
 		if ( player.Pawn is Player basePlayer )
@@ -110,5 +93,11 @@ partial class SandboxGame : Game
 				basePlayer.DevController = new NoclipController();
 			}
 		}
+	}
+
+	[ClientCmd( "debug_write" )]
+	public static void Write()
+	{
+		ConsoleSystem.Run( "quit" );
 	}
 }

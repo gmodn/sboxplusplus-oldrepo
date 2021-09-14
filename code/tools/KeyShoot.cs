@@ -11,26 +11,25 @@
 			{
 				if ( Input.Pressed( InputButton.Attack1 ) )
 				{
-					ShootBox();
+					ShootKey();
 				}
 
-				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0.05f )
+				if ( Input.Down( InputButton.Attack2 ) && timeSinceShoot > 0f )
 				{
 					timeSinceShoot = 0;
-					ShootBox();
+					ShootKey();
 				}
 			}
 		}
 
-		void ShootBox()
+		void ShootKey()
 		{
-			var ent = new Prop
+			var ent = new KeyEntity()
 			{
-				Position = Owner.EyePos + Owner.EyeRot.Forward * 50,
+				Position = Owner.EyePos + Owner.EyeRot.Forward * 30,
 				Rotation = Owner.EyeRot
 			};
 
-			ent.SetModel( "models/sboxkeyv2.vmdl" );
 			ent.Velocity = Owner.EyeRot.Forward * 1000;
 			
 			var player = Owner as SandboxPlayer;

@@ -1,6 +1,5 @@
 ﻿using Sandbox;
 using System;
-using System.Collections.Generic;
 
 [Library( "ent_car", Title = "Car", Spawnable = true )]
 public partial class CarEntity : Prop, IUse
@@ -286,7 +285,7 @@ public partial class CarEntity : Prop, IUse
 		bool canAirControl = false;
 
 		var v = rotation * localVelocity.WithZ( 0 );
-		var vDelta = MathF.Pow((v.Length / 1000.0f).Clamp( 0, 1 ), 5.0f).Clamp(0, 1);
+		var vDelta = MathF.Pow( (v.Length / 1000.0f).Clamp( 0, 1 ), 5.0f ).Clamp( 0, 1 );
 		if ( vDelta < 0.01f ) vDelta = 0;
 
 		if ( debug_car )
@@ -295,7 +294,7 @@ public partial class CarEntity : Prop, IUse
 			DebugOverlay.Line( body.MassCenter, body.MassCenter + v.Normal * 100, Color.Green, 0, false );
 		}
 
-		var angle = ( rotation.Forward.Normal * MathF.Sign( localVelocity.x )).Normal.Dot( v.Normal ).Clamp( 0.0f, 1.0f );
+		var angle = (rotation.Forward.Normal * MathF.Sign( localVelocity.x )).Normal.Dot( v.Normal ).Clamp( 0.0f, 1.0f );
 		angle = angle.LerpTo( 1.0f, 1.0f - vDelta );
 		grip = grip.LerpTo( angle, 1.0f - MathF.Pow( 0.001f, dt ) );
 
@@ -451,17 +450,24 @@ public partial class CarEntity : Prop, IUse
 	private void RemoveDriver( SandboxPlayer player )
 	{
 		driver = null;
+		timeSinceDriverLeft = 0;
+
+		ResetInput();
+
+		if ( !player.IsValid() )
+			return;
+
 		player.Vehicle = null;
 		player.VehicleController = null;
 		player.VehicleAnimator = null;
 		player.VehicleCamera = null;
 		player.Parent = null;
-		player.PhysicsBody.Enabled = true;
-		player.PhysicsBody.Position = player.Position;
 
-		timeSinceDriverLeft = 0;
-
-		ResetInput();
+		if ( player.PhysicsBody.IsValid() )
+		{
+			player.PhysicsBody.Enabled = true;
+			player.PhysicsBody.Position = player.Position;
+		}
 	}
 
 	public bool OnUse( Entity user )
@@ -516,7 +522,7 @@ public partial class CarEntity : Prop, IUse
 				Entity = player,
 				Pos = player.Position + Vector3.Up * 50,
 				Velocity = velocity,
-				PreVelocity = velocity,
+				PreVelocity = velocity * 20.0f, // I don't know why the ragdolls now need more force
 				PostVelocity = velocity,
 				PreAngularVelocity = angularVelocity,
 				Speed = speed,
@@ -555,6 +561,12 @@ public partial class CarEntity : Prop, IUse
 					.WithAttacker( driver != null ? driver : this, driver != null ? this : null )
 					.WithPosition( eventData.Pos )
 					.WithForce( eventData.PreVelocity ) );
+
+				if ( eventData.Entity.LifeState == LifeState.Dead && eventData.Entity is not SandboxPlayer )
+				{
+					PhysicsBody.Velocity = eventData.PreVelocity;
+					PhysicsBody.AngularVelocity = eventData.PreAngularVelocity;
+				}
 			}
 		}
 	}
