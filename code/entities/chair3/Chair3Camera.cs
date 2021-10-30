@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System;
 
-public class ChairCamera : Camera
+public class Chair3Camera : Camera
 {
 	protected virtual float MinFov => 80.0f;
 	protected virtual float MaxFov => 100.0f;
@@ -49,7 +49,7 @@ public class ChairCamera : Camera
 		carPitch = 0;
 		firstPerson = true;
 
-		var car = (pawn as SandboxPlayer)?.Vehicle as ChairEntity;
+		var car = (pawn as SandboxPlayer)?.Vehicle as Chair3Entity;
 		if ( !car.IsValid() ) return;
 
 		orbitYawRot = firstPerson ? Rotation.Identity : Rotation.FromYaw( car.Rotation.Yaw() );
@@ -62,7 +62,7 @@ public class ChairCamera : Camera
 		var pawn = Local.Pawn;
 		if ( pawn == null ) return;
 
-		var car = (pawn as SandboxPlayer)?.Vehicle as ChairEntity;
+		var car = (pawn as SandboxPlayer)?.Vehicle as Chair3Entity;
 		if ( !car.IsValid() ) return;
 
 		var body = car.PhysicsBody;
@@ -137,7 +137,7 @@ public class ChairCamera : Camera
 		Viewer = pawn;
 	}
 
-	private void DoThirdPerson( ChairEntity car, PhysicsBody body )
+	private void DoThirdPerson( Chair3Entity car, PhysicsBody body )
 	{
 		Rotation = orbitYawRot * orbitPitchRot;
 
@@ -163,7 +163,7 @@ public class ChairCamera : Camera
 		var pawn = Local.Pawn;
 		if ( pawn == null ) return;
 
-		var car = (pawn as SandboxPlayer)?.Vehicle as ChairEntity;
+		var car = (pawn as SandboxPlayer)?.Vehicle as Chair3Entity;
 		if ( !car.IsValid() ) return;
 
 		if ( input.Pressed( InputButton.View ) )

@@ -47,7 +47,7 @@ public class Chair2Camera : Camera
 		orbitPitchRot = Rotation.Identity;
 		currentFov = MinFov;
 		carPitch = 0;
-		firstPerson = false;
+		firstPerson = true;
 
 		var car = (pawn as SandboxPlayer)?.Vehicle as Chair2Entity;
 		if ( !car.IsValid() ) return;
