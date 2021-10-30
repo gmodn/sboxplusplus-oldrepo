@@ -129,7 +129,7 @@
 
 .spawnpage {
     display: none;
-    
+
 
     &.active {
         display: flex;
@@ -144,10 +144,10 @@
         justify-content: space-between;
         margin: 10px;
         border-radius: 5px;
-        
+
 
         .cell {
-            padding: 5px;
+            padding: 13px;
         }
 
         .icon {
@@ -162,7 +162,7 @@
             background-size: cover;
             background-color: rgba(black, 0.1);
             background-image: url( /entity/spawnicon.png );
-            
+
 
             label {
                 font-size: 9px;
@@ -171,12 +171,14 @@
                 left: 0;
                 right: 0;
                 pointer-events: none;
-                
             }
 
             &:hover {
                 color: #fff;
                 background-color: rgba(black, 0.4);
+                width: 120%;
+                height: 120%;
+                cursor: pointer;
             }
 
             &:active {
