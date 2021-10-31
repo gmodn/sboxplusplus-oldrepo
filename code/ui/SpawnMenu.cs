@@ -54,6 +54,7 @@ public partial class SpawnMenu : Panel
 
 						button.AddEventListener( "onclick", () =>
 						{
+							PlaySound("ui.button.press");
 							ConsoleSystem.Run( "tool_current", entry.Name );
 							ConsoleSystem.Run( "inventory_current", "weapon_tool" );
 

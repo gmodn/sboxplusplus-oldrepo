@@ -15,7 +15,7 @@ Compass {
 		background-image: url(ui\compass.png);
 		top: 0px;
 		background-repeat: repeat-x;
-		background-size: 360% 100%;
+		background-size: 360% 100%;	
 	}
 }
 
@@ -111,7 +111,7 @@ InventoryIcon {
 	font-family: poppins;
 	border-radius: 5px;
 
-	
+
 
 	.item-name {
 		padding: 5px;
@@ -124,8 +124,6 @@ InventoryIcon {
 		bottom: 0;
 		opacity: 0.5;
 		transition: all 0.5s ease-in-out;
-		
-		
 	}
 
 	.slot-number {
@@ -137,15 +135,13 @@ InventoryIcon {
 		top: 1px;
 		right: 5px;
 		transition: all 0.1s ease-in;
-		
-		
-		
 	}
 
 	&.active {
 		background-color: rgba(255, 226, 0, 0.2);
 		border: 1px solid rgba( white, 0.8 );
 		transition: all 0.1s ease-out;
+		height: 100px;
 
 		.slot-number {
 			color: white;

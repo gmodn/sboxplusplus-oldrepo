@@ -19,7 +19,8 @@
         padding-left: 10px;
         background-color: #0F131A;
         border-radius: 5px;
-        opacity: 0.5;
+        opacity: 0.9;
+        transition: all 0.2s ease-out;
 
         button {
             padding: 6px 5px;
@@ -30,8 +31,7 @@
             opacity: 0.2;
             color: #fff;
             cursor: pointer;
-            
-            
+            transition: all 0.1s ease-out;
             //border-radius: 5px;
             label {
                 text-shadow: 1px 1px 4px rgba( black, 0.2 );
@@ -39,12 +39,15 @@
 
             &:hover {
                 opacity: 1;
+                font-size: 18px;
+                transition: all 0.2s ease-out;
             }
 
             &.active {
                 transform: scale( 1 );
                 opacity: 1;
                 color: #fff;
+                font-size: 19px;
                 //background-color: #fff;//( #3273eb, 0.2 );
                 color: #3273eb;
             }
@@ -89,12 +92,13 @@
                 button {
                     padding: 3px 10px;
                     font-size: 11px;
-                    transition: all 0.2s ease-out;
+                    transition: all 0.1s ease-out;
                     cursor: pointer;
 
                     &:hover {
                         //border-left: 3px solid #3273eb;
                         color: white;
+                        font-size: 15 px;
                     }
 
                     &.active {
@@ -162,6 +166,7 @@
             background-size: cover;
             background-color: rgba(black, 0.1);
             background-image: url( /entity/spawnicon.png );
+            transition: all 0.1s ease-out;
 
 
             label {
@@ -179,6 +184,7 @@
                 width: 120%;
                 height: 120%;
                 cursor: pointer;
+                transition: all 0.2s ease-out;
             }
 
             &:active {
