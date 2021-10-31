@@ -11,7 +11,7 @@ partial class Crowbar : Weapon
 	public override void Spawn()
 	{
 		base.Spawn();
-		SetModel( "models/weapons/crowbar/w_crowbar.vmdl" );
+		SetModel("models/weapons/crowbar/w_crowbar.vmdl");
 	}
 	
 	public override void AttackPrimary()
@@ -85,7 +85,7 @@ partial class Crowbar : Weapon
 			_ = new Sandbox.ScreenShake.Perlin();
 		}
 
-		ViewModelEntity?.SetAnimBool( "fire", true );
+		ViewModelEntity?.SetAnimBool( "attack", true );
 	}
 
 	[ClientRpc]
@@ -97,6 +97,12 @@ partial class Crowbar : Weapon
 		{
 			_ = new Sandbox.ScreenShake.Perlin( 1.0f, 1.0f, 3.0f );
 		}
-		ViewModelEntity?.SetAnimBool( "fire", true );
+		ViewModelEntity?.SetAnimBool("attack_hit", true );
+	}
+
+	public override void SimulateAnimator(PawnAnimator anim)
+	{
+		anim.SetParam("holdtype", 4);
+		anim.SetParam("aimat_weight", 1.0f);
 	}
 }

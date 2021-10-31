@@ -33,6 +33,8 @@ partial class Sexyness : Weapon
 		// Shoot the bullets
 		//
 		ShootBullet( 0.0f, 100.5f, 100.0f, 3.0f );
+
+		Sound.FromScreen("ui.button.press");
 	}
 
 	public override void AttackSecondary()
