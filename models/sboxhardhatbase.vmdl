@@ -15,11 +15,11 @@
 						[
 							{
 								from = "hat_construction.vmat"
-								to = "materials/sblue.vmat"
+								to = "models/logo/resources/s2hublogo.vmat"
 							},
 							{
 								from = "primary_white.vmat"
-								to = "materials/dev/reflectivity_90b.vmat"
+								to = "materials/shiny_white.vmat"
 							},
 						]
 						use_global_default = false

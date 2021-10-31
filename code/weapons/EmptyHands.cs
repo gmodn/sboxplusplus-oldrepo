@@ -1,6 +1,6 @@
 using Sandbox;
 
-[Library( "weapon_hands", Title = "Hands", Spawnable = true )]
+[Library( "weapon_hands", Title = "Hands", Spawnable = false )]
 partial class Hands : Weapon 
 {
     public override string ViewModelPath => "";
