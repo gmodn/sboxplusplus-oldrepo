@@ -38,7 +38,7 @@ public partial class SpawnMenu : Panel
 			var tabs = right.Add.Panel( "tabs" );
 			{
 				tabs.Add.Button( "Tools" ).AddClass( "active" );
-				tabs.Add.Button( "Utility" );
+				tabs.Add.Button( "s&box++ made by Gman (Ian)" );
 			}
 			var body = right.Add.Panel( "body" );
 			{
@@ -54,7 +54,7 @@ public partial class SpawnMenu : Panel
 
 						button.AddEventListener( "onclick", () =>
 						{
-							PlaySound("ui.button.press");
+							Sound.FromScreen("ui.drag.start");
 							ConsoleSystem.Run( "tool_current", entry.Name );
 							ConsoleSystem.Run( "inventory_current", "weapon_tool" );
 

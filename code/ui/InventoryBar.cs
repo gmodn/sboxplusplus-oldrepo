@@ -99,5 +99,7 @@ public class InventoryBar : Panel
 		while ( nextSlot >= count ) nextSlot -= count;
 
 		SetActiveSlot( input, inventory, nextSlot );
+
+		Sound.FromScreen("ui.button.over");
 	}
 }

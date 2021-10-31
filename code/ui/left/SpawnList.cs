@@ -18,7 +18,11 @@ public partial class SpawnList : Panel
 		{
 			var file = (string)data;
 			var panel = cell.Add.Panel( "icon" );
-			panel.AddEventListener( "onclick", () => ConsoleSystem.Run( "spawn", "models/" + file ) );
+			panel.AddEventListener( "onclick", () => 
+			{
+				ConsoleSystem.Run("spawn", "models/" + file);
+				Sound.FromScreen("ui.button.press");
+			} );
 			panel.Style.BackgroundImage = Texture.Load( $"/models/{file}_c.png", false );
 		};
 

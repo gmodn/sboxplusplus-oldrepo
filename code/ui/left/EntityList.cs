@@ -21,7 +21,12 @@ public partial class EntityList : Panel
 			var entry = (LibraryAttribute)data;
 			var btn = cell.Add.Button( entry.Title );
 			btn.AddClass( "icon" );
-			btn.AddEventListener( "onclick", () => ConsoleSystem.Run( "spawn_entity", entry.Name ) );
+			btn.AddEventListener( "onclick", () => 
+			{
+				ConsoleSystem.Run("spawn_entity", entry.Name);
+				Sound.FromScreen("ui.button.press");
+			} );
+			
 			btn.Style.BackgroundImage = Texture.Load( $"/entity/{entry.Name}.png", false );
 
 			
