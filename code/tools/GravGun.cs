@@ -216,6 +216,8 @@ public partial class GravGun : Carriable
 		if (IsBodyGrabbed(body))
 			return;
 
+		ViewModelEntity?.SetAnimBool("grab", true);
+
 		GrabEnd();
 
 		HeldBody = body;
@@ -262,6 +264,8 @@ public partial class GravGun : Carriable
 		HeldBody = null;
 		HeldRot = Rotation.Identity;
 		HeldEntity = null;
+
+		ViewModelEntity?.SetAnimBool("fire", true);
 	}
 
 	private void GrabMove(Vector3 startPos, Vector3 dir, Rotation rot)

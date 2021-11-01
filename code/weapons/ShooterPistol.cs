@@ -15,7 +15,7 @@ partial class ShooterPistol : Weapon
 	{
 		base.Spawn();
 
-		SetModel( "weapons/rust_pistol/rust_pistol.vmdl" );
+		SetModel("models/weapons/shooter/w_pistol.vmdl");
 	}
 
 	public override bool CanPrimaryAttack()

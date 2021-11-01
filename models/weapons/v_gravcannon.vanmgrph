@@ -76,6 +76,7 @@
 		[
 			{
 				_class = "CAnimGraphGeneralSettings"
+				m_iGridSnap = 16
 			},
 			{
 				_class = "CAnimGraphNetworkSettings"
@@ -129,7 +130,7 @@
 			{
 				_class = "CSequenceAnimNode"
 				m_sName = "Unnamed"
-				m_vecPosition = [ -487.0, -1.0 ]
+				m_vecPosition = [ -608.0, -144.0 ]
 				m_nNodeID = 
 				{
 					m_id = 577670065
@@ -137,7 +138,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "fire"
+				m_sequenceName = "@hold_idle"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -150,8 +151,8 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
-				m_vecPosition = [ -618.0, -119.0 ]
+				m_sName = "draw"
+				m_vecPosition = [ -608.0, -208.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1421775535
@@ -172,8 +173,8 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
-				m_vecPosition = [ -503.0, -204.0 ]
+				m_sName = "fire"
+				m_vecPosition = [ -608.0, -272.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1631504389
@@ -181,7 +182,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "altfire"
+				m_sequenceName = "fire"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -218,7 +219,7 @@
 						{
 							m_id = 1361374698
 						}
-						m_position = [ -116.0, -149.0 ]
+						m_position = [ -128.0, -192.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -268,7 +269,7 @@
 						{
 							m_id = 1911934699
 						}
-						m_position = [ -361.0, -124.0 ]
+						m_position = [ -352.0, -192.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -318,7 +319,7 @@
 						{
 							m_id = 1346017069
 						}
-						m_position = [ -359.0, 17.0 ]
+						m_position = [ -352.0, -64.0 ]
 						m_bIsStartState = true
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -359,7 +360,7 @@
 						]
 						m_tags = [  ]
 						m_tagBehaviors = [  ]
-						m_name = "reload"
+						m_name = "grab"
 						m_childNodeID = 
 						{
 							m_id = 577670065
@@ -368,7 +369,7 @@
 						{
 							m_id = 1243514606
 						}
-						m_position = [ -362.0, -237.0 ]
+						m_position = [ -352.0, -304.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -493,7 +494,7 @@
 						{
 							m_id = 1830143744
 						}
-						m_position = [ -573.0, -188.0 ]
+						m_position = [ -576.0, -192.0 ]
 						m_bIsStartState = false
 						m_bIsEndtState = false
 						m_bIsPassthrough = false
@@ -513,8 +514,8 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
-				m_vecPosition = [ -533.0, -279.0 ]
+				m_sName = "idle"
+				m_vecPosition = [ -608.0, -336.0 ]
 				m_nNodeID = 
 				{
 					m_id = 2060363704

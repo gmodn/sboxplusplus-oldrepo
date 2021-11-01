@@ -143,8 +143,8 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "attack_hit"
-				m_vecPosition = [ -385.0, -252.0 ]
+				m_sName = "attack"
+				m_vecPosition = [ -400.0, -256.0 ]
 				m_nNodeID = 
 				{
 					m_id = 245889310
@@ -152,7 +152,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "hitkill1"
+				m_sequenceName = "hitcenter1"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}
@@ -528,8 +528,8 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "attack"
-				m_vecPosition = [ -384.0, -336.0 ]
+				m_sName = "attack_hit"
+				m_vecPosition = [ -384.0, -352.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1855545707
@@ -537,7 +537,7 @@
 				m_networkMode = "ClientSimulate"
 				m_sNote = ""
 				m_tagSpans = [  ]
-				m_sequenceName = "hitcenter1"
+				m_sequenceName = "hitkill1"
 				m_playbackSpeed = 1.0
 				m_bLoop = false
 			}

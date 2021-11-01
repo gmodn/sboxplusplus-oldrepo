@@ -55,7 +55,6 @@ partial class Tool : Carriable
 	public override void ActiveStart( Entity ent )
 	{
 		base.ActiveStart( ent );
-
 		CurrentTool?.Activate();
 	}
 

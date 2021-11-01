@@ -9,6 +9,8 @@ public partial class Tool
 		particle.SetPosition( 0, hitPos );
 		particle.Destroy( false );
 
+		ViewModelEntity?.SetAnimBool("fire", true);
+
 		PlaySound("toolgun_hit");
 	}
 }

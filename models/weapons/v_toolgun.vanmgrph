@@ -76,6 +76,7 @@
 		[
 			{
 				_class = "CAnimGraphGeneralSettings"
+				m_iGridSnap = 16
 			},
 			{
 				_class = "CAnimGraphNetworkSettings"
@@ -113,6 +114,7 @@
 					m_id = 206872258
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_childID = 
 				{
 					m_id = 1714022296
@@ -127,13 +129,14 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
+				m_sName = "reload"
 				m_vecPosition = [ -487.0, -1.0 ]
 				m_nNodeID = 
 				{
 					m_id = 577670065
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "reload"
 				m_playbackSpeed = 1.0
@@ -148,13 +151,14 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
+				m_sName = "deploy"
 				m_vecPosition = [ -618.0, -119.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1421775535
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "deploy"
 				m_playbackSpeed = 2.0
@@ -169,13 +173,14 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
-				m_vecPosition = [ -503.0, -207.0 ]
+				m_sName = "fire"
+				m_vecPosition = [ -512.0, -208.0 ]
 				m_nNodeID = 
 				{
 					m_id = 1631504389
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "fire"
 				m_playbackSpeed = 1.0
@@ -197,6 +202,7 @@
 					m_id = 1714022296
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_states = 
 				[
 					{
@@ -508,13 +514,14 @@
 			value = 
 			{
 				_class = "CSequenceAnimNode"
-				m_sName = "Unnamed"
+				m_sName = "idle"
 				m_vecPosition = [ -532.0, -279.0 ]
 				m_nNodeID = 
 				{
 					m_id = 2060363704
 				}
 				m_networkMode = "ClientSimulate"
+				m_sNote = ""
 				m_tagSpans = [  ]
 				m_sequenceName = "idle01"
 				m_playbackSpeed = 1.0
