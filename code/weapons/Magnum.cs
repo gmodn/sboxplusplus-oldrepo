@@ -1,6 +1,6 @@
 using Sandbox;
 
-[Library("weapon_magnum", Title = "Magnum", Spawnable = true)]
+[Library("weapon_magnum", Title = ".357 Magnum", Spawnable = true)]
 partial class Magnum : Weapon
 {
 	public override string ViewModelPath => "models/weapons/v_357.vmdl";
