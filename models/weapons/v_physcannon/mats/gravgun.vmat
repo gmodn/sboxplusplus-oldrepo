@@ -41,7 +41,7 @@ Layer0
 	g_flSelfIllumBrightness "3.069"
 	g_flSelfIllumScale "1.000"
 	g_vSelfIllumScrollSpeed "[0.000 0.000]"
-	g_vSelfIllumTint "[0.847059 0.623529 0.000000 1.000000]"
+	g_vSelfIllumTint "[1.000000 0.549020 0.000000 1.000000]"
 	TextureSelfIllumMask "models/weapons/v_physcannon/mats/v_physcannon_mask.tga"
 
 	//---- Texture Coordinates ----
