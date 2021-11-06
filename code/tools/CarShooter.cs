@@ -5,6 +5,8 @@
 	{
 		TimeSince timeSinceShoot;
 
+		PreviewEntity previewModel;
+
 		public override void Simulate()
 		{
 			if ( Host.IsServer )
@@ -19,21 +21,40 @@
 					timeSinceShoot = 0;
 					ShootCar();
 				}
+            }
+        }
+
+        void ShootCar()
+        {
+            var ent = new CarEntity
+            {
+                Position = Owner.EyePos + Owner.EyeRot.Forward * 150,
+                Rotation = Owner.EyeRot
+            };
+
+            ent.Velocity = Owner.EyeRot.Forward * 1000;
+
+            var player = Owner as SandboxPlayer;
+            player.AddToUndo(ent);
+        }
+
+		public override void CreatePreviews()
+		{
+			if (TryCreatePreview(ref previewModel, "models/kart_preview.vmdl"))
+			{
+				previewModel.RelativeToNormal = false;
 			}
 		}
 
-		void ShootCar()
+		protected override bool IsPreviewTraceValid(TraceResult tr)
 		{
-			var ent = new CarEntity
-			{
-				Position = Owner.EyePos + Owner.EyeRot.Forward * 150,
-				Rotation = Owner.EyeRot
-			};
+			if (!base.IsPreviewTraceValid(tr))
+				return false;
 
-			ent.Velocity = Owner.EyeRot.Forward * 1000;
-			
-			var player = Owner as SandboxPlayer;
-			player.AddToUndo( ent );
+			if (tr.Entity is BalloonEntity)
+				return false;
+
+			return true;
 		}
 	}
 

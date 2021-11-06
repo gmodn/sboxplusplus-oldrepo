@@ -1,9 +1,11 @@
 ﻿namespace Sandbox.Tools
 {
-	[Library( "tool_keygun", Title = "s&box key gen 2021", Description = "s&box key gen 100% virus free no torrent", Group = "fun" )]
+	[Library( "tool_keygun", Title = "s&box key gen 2021", Description = "DEALS THAT WILL MAKE YOU [Drop your ballsack!!!]", Group = "fun" )]
 	public class KeyGen: BaseTool
 	{
 		TimeSince timeSinceShoot;
+
+		PreviewEntity previewModel;
 
 		public override void Simulate()
 		{
@@ -34,6 +36,25 @@
 			
 			var player = Owner as SandboxPlayer;
 			player.AddToUndo( ent );
+		}
+
+		public override void CreatePreviews()
+		{
+			if (TryCreatePreview(ref previewModel, "models/sboxkey_preview.vmdl"))
+			{
+				previewModel.RelativeToNormal = false;
+			}
+		}
+
+		protected override bool IsPreviewTraceValid(TraceResult tr)
+		{
+			if (!base.IsPreviewTraceValid(tr))
+				return false;
+
+			if (tr.Entity is BalloonEntity)
+				return false;
+
+			return true;
 		}
 	}
 
