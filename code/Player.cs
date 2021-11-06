@@ -173,14 +173,7 @@ partial class SandboxPlayer : Player
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
-			if ( MainCamera is not FirstPersonCamera )
-			{
-				MainCamera = new FirstPersonCamera();
-			}
-			else
-			{
-				MainCamera = new ThirdPersonCamera();
-			}
+
 		}
 
 		Camera = GetActiveCamera();

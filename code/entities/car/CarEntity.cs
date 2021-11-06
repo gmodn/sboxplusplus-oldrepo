@@ -77,7 +77,7 @@ public partial class CarEntity : Prop, IUse
 	{
 		base.Spawn();
 
-		var modelName = "models/car/car.vmdl";
+		var modelName = "models/kart_parts/body/test_body.vmdl";
 
 		SetModel( modelName );
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
