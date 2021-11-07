@@ -31,7 +31,7 @@ namespace Sandbox.Tools
 
 		public override void CreatePreviews()
 		{
-			if ( TryCreatePreview( ref previewModel, "models/citizen/citizen.vmdl") )
+			if ( TryCreatePreview( ref previewModel, "models/terrybaloon.vmdl") )
 			{
 				previewModel.RelativeToNormal = false;
 			}
@@ -76,7 +76,7 @@ namespace Sandbox.Tools
 					Position = tr.EndPos,
 				};
 
-				ent.SetModel("models/citizen/citizen.vmdl");
+				ent.SetModel("models/terrybaloon.vmdl");
 				ent.PhysicsBody.GravityScale = -50000000000000000000000.2f;
 				ent.RenderColor = Tint;
 

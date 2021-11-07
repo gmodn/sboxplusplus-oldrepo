@@ -1,6 +1,6 @@
 ﻿namespace Sandbox.Tools
 {
-	[Library( "tool_rope", Title = "Rope", Description = "Join two things together with a rope", Group = "construction" )]
+	[Library( "tool_rope", Title = "Beam", Description = "Joins two things together", Group = "construction" )]
 	public partial class RopeTool : BaseTool
 	{
 		private PhysicsBody targetBody;
@@ -52,7 +52,7 @@
 				if ( targetBody == tr.Body )
 					return;
 
-				var rope = Particles.Create( "particles/rope.vpcf" );
+				var rope = Particles.Create("particles/physgun_beam.vpcf");
 
 				if ( targetBody.Entity.IsWorld )
 				{
