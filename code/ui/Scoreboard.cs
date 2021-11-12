@@ -32,12 +32,6 @@ public class Scoreboard : Sandbox.UI.Scoreboard<ScoreboardEntry>
 			return -rank;
 		} );
 	}
-
-	protected override void AddPlayer( PlayerScore.Entry entry )
-	{
-		base.AddPlayer( entry );
-
-	}
 }
 
 public class ScoreboardEntry : Sandbox.UI.ScoreboardEntry
@@ -57,15 +51,5 @@ public class ScoreboardEntry : Sandbox.UI.ScoreboardEntry
 		PlayerName = Add.Label( "Player Name", "name" );
 		Deaths = Add.Label( "0", "deaths" );
 		Ping = Add.Label( "0", "ping" );
-	}
-
-	public override void UpdateFrom( PlayerScore.Entry entry )
-	{
-		base.UpdateFrom( entry );
-
-		Color.Style.BackgroundColor = new Color( entry.Get<uint>( "color", 0 ) );
-		Avatar.SetTexture( $"avatar:{entry.Get<ulong>( "steamid", 0 )}" );
-
-		SetClass( "me", Local.Client != null && entry.Get<ulong>( "steamid", 0 ) == Local.Client.SteamId );
 	}
 }
