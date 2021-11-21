@@ -5,33 +5,23 @@ partial class SandboxPlayer
 	[ClientRpc]
 	private void BecomeRagdollOnClient( Vector3 velocity, DamageFlags damageFlags, Vector3 forcePos, Vector3 force, int bone )
 	{
-		var ent = new ModelEntity();
+		var ent = new Prop();
 		ent.Position = Position;
 		ent.Rotation = Rotation;
-		ent.Scale = Scale;
 		ent.MoveType = MoveType.Physics;
 		ent.UsePhysicsCollision = true;
-		ent.EnableAllCollisions = true;
-		ent.CollisionGroup = CollisionGroup.Debris;
 		ent.SetModel( GetModelName() );
+		ent.SetMaterialGroup( GetMaterialGroup() );
 		ent.CopyBonesFrom( this );
-		ent.CopyBodyGroups( this );
-		ent.CopyMaterialGroup( this );
 		ent.TakeDecalsFrom( this );
-		ent.EnableHitboxes = true;
-		ent.EnableAllCollisions = true;
-		ent.SurroundingBoundsMode = SurroundingBoundsType.Physics;
-		ent.RenderColor = RenderColor;
-		ent.PhysicsGroup.Velocity = velocity;
+		ent.SetRagdollVelocityFrom( this );
+		ent.PhysicsGroup.AddVelocity( force );
+		Corpse = ent;
 
 		if ( Local.Pawn == this )
 		{
 			//ent.EnableDrawing = false; wtf
 		}
-
-		ent.SetInteractsAs( CollisionLayer.Debris );
-		ent.SetInteractsWith( CollisionLayer.WORLD_GEOMETRY );
-		ent.SetInteractsExclude( CollisionLayer.Player | CollisionLayer.Debris );
 
 		foreach ( var child in Children )
 		{
@@ -75,6 +65,12 @@ partial class SandboxPlayer
 
 		Corpse = ent;
 
-		ent.DeleteAsync( 10.0f );
+		//ent.DeleteAsync( 10.0f );
+	}
+
+	[ServerCmd( "committypekillinconsole", Help = "Explode yourself" )]
+	public static void death()
+	{
+		ConsoleSystem.Run( "kill" );
 	}
 }

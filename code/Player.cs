@@ -171,18 +171,6 @@ partial class SandboxPlayer : Player
 		TickPlayerUse();
 		SimulateActiveChild( cl, ActiveChild );
 
-		if ( Input.Pressed( InputButton.View ) )
-		{
-			if ( MainCamera is not FirstPersonCamera )
-			{
-				MainCamera = new FirstPersonCamera();
-			}
-			else
-			{
-				MainCamera = new ThirdPersonCamera();
-			}
-		}
-
 		Camera = GetActiveCamera();
 
 		if ( Input.Pressed( InputButton.Drop ) )
@@ -246,7 +234,6 @@ partial class SandboxPlayer : Player
 	}
 
 	// TODO
-
 	//public override bool HasPermission( string mode )
 	//{
 	//	if ( mode == "noclip" ) return true;

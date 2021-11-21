@@ -38,7 +38,7 @@ public partial class SpawnMenu : Panel
 			var tabs = right.Add.Panel( "tabs" );
 			{
 				tabs.Add.Button( "Tools" ).AddClass( "active" );
-				tabs.Add.Button( "s&box++ made by Gman (Ian)" );
+				tabs.Add.Button( "s&box++" );
 			}
 			var body = right.Add.Panel( "body" );
 			{
@@ -62,8 +62,13 @@ public partial class SpawnMenu : Panel
 								child.SetClass( "active", child == button );
 						} );
 					}
+
+					//var utils = body.Add.Panel( "dev commands" );
+					//{
+
+					//}
 				}
-				body.Add.Panel( "inspector" );
+					body.Add.Panel( "inspector" );
 			}
 		}
 
