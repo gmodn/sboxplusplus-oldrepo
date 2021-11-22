@@ -1,8 +1,8 @@
 ﻿using Sandbox;
 using System;
 
-[Library( "ent_car", Title = "Car", Spawnable = true )]
-public partial class CarEntity : Prop, IUse
+[Library( "vehicle_skart", Title = "s&kart", Spawnable = true )]
+public partial class SkartEntity : Prop, IUse
 {
 	[ConVar.Replicated( "debug_car" )]
 	public static bool debug_car { get; set; } = false;
@@ -10,10 +10,10 @@ public partial class CarEntity : Prop, IUse
 	[ConVar.Replicated( "car_accelspeed" )]
 	public static float car_accelspeed { get; set; } = 500.0f;
 
-	private CarWheel frontLeft;
-	private CarWheel frontRight;
-	private CarWheel backLeft;
-	private CarWheel backRight;
+	private SkartWheel frontLeft;
+	private SkartWheel frontRight;
+	private SkartWheel backLeft;
+	private SkartWheel backRight;
 
 	private float frontLeftDistance;
 	private float frontRightDistance;
@@ -56,12 +56,12 @@ public partial class CarEntity : Prop, IUse
 
 	private InputState currentInput;
 
-	public CarEntity()
+	public SkartEntity()
 	{
-		frontLeft = new CarWheel( this );
-		frontRight = new CarWheel( this );
-		backLeft = new CarWheel( this );
-		backRight = new CarWheel( this );
+		frontLeft = new SkartWheel( this );
+		frontRight = new SkartWheel( this );
+		backLeft = new SkartWheel( this );
+		backRight = new SkartWheel( this );
 	}
 
 	[Net] public Player driver { get; private set; }
@@ -77,7 +77,7 @@ public partial class CarEntity : Prop, IUse
 	{
 		base.Spawn();
 
-		var modelName = "entities/modular_vehicle/chassis_2_main.vmdl";
+		var modelName = "models/kart_preview.vmdl";
 
 		SetModel( modelName );
 		SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
@@ -105,7 +105,7 @@ public partial class CarEntity : Prop, IUse
 
 		{
 			var vehicle_fuel_tank = new ModelEntity();
-			vehicle_fuel_tank.SetModel( "entities/modular_vehicle/vehicle_fuel_tank.vmdl" );
+			vehicle_fuel_tank.SetModel( "" );
 			vehicle_fuel_tank.Transform = Transform;
 			vehicle_fuel_tank.Parent = this;
 			vehicle_fuel_tank.LocalPosition = new Vector3( 0.75f, 0, 0 ) * 40.0f;
@@ -113,52 +113,52 @@ public partial class CarEntity : Prop, IUse
 
 		{
 			chassis_axle_front = new ModelEntity();
-			chassis_axle_front.SetModel( "entities/modular_vehicle/chassis_axle_front.vmdl" );
+			chassis_axle_front.SetModel( "" );
 			chassis_axle_front.Transform = Transform;
 			chassis_axle_front.Parent = this;
 			chassis_axle_front.LocalPosition = new Vector3( 1.05f, 0, 0.35f ) * 40.0f;
 
 			{
 				wheel0 = new ModelEntity();
-				wheel0.SetModel( "entities/modular_vehicle/wheel_a.vmdl" );
+				wheel0.SetModel( "models/kart_parts/wheel/test_wheel.vmdl" );
 				wheel0.SetParent( chassis_axle_front, "Wheel_Steer_R", new Transform( Vector3.Zero, Rotation.From( 0, 180, 0 ) ) );
 			}
 
 			{
 				wheel1 = new ModelEntity();
-				wheel1.SetModel( "entities/modular_vehicle/wheel_a.vmdl" );
+				wheel1.SetModel( "models/kart_parts/wheel/test_wheel.vmdl" );
 				wheel1.SetParent( chassis_axle_front, "Wheel_Steer_L", new Transform( Vector3.Zero, Rotation.From( 0, 0, 0 ) ) );
 			}
 
 			{
 				var chassis_steering = new ModelEntity();
-				chassis_steering.SetModel( "entities/modular_vehicle/chassis_steering.vmdl" );
+				chassis_steering.SetModel( "" );
 				chassis_steering.SetParent( chassis_axle_front, "Axle_front_Center", new Transform( Vector3.Zero, Rotation.From( -90, 180, 0 ) ) );
 			}
 		}
 
 		{
 			chassis_axle_rear = new ModelEntity();
-			chassis_axle_rear.SetModel( "entities/modular_vehicle/chassis_axle_rear.vmdl" );
+			chassis_axle_rear.SetModel( "" );
 			chassis_axle_rear.Transform = Transform;
 			chassis_axle_rear.Parent = this;
 			chassis_axle_rear.LocalPosition = new Vector3( -1.05f, 0, 0.35f ) * 40.0f;
 
 			{
 				var chassis_transmission = new ModelEntity();
-				chassis_transmission.SetModel( "entities/modular_vehicle/chassis_transmission.vmdl" );
+				chassis_transmission.SetModel( "" );
 				chassis_transmission.SetParent( chassis_axle_rear, "Axle_Rear_Center", new Transform( Vector3.Zero, Rotation.From( -90, 180, 0 ) ) );
 			}
 
 			{
 				wheel2 = new ModelEntity();
-				wheel2.SetModel( "entities/modular_vehicle/wheel_a.vmdl" );
+				wheel2.SetModel( "models/kart_parts/wheel/test_wheel.vmdl" );
 				wheel2.SetParent( chassis_axle_rear, "Axle_Rear_Center", new Transform( Vector3.Left * (0.7f * 40), Rotation.From( 0, 90, 0 ) ) );
 			}
 
 			{
 				wheel3 = new ModelEntity();
-				wheel3.SetModel( "entities/modular_vehicle/wheel_a.vmdl" );
+				wheel3.SetModel( "models/kart_parts/wheel/test_wheel.vmdl" );
 				wheel3.SetParent( chassis_axle_rear, "Axle_Rear_Center", new Transform( Vector3.Right * (0.7f * 40), Rotation.From( 0, -90, 0 ) ) );
 			}
 		}
@@ -475,9 +475,9 @@ public partial class CarEntity : Prop, IUse
 		if ( user is SandboxPlayer player && player.Vehicle == null && timeSinceDriverLeft > 1.0f )
 		{
 			player.Vehicle = this;
-			player.VehicleController = new CarController();
-			player.VehicleAnimator = new CarAnimator();
-			player.VehicleCamera = new CarCamera();
+			player.VehicleController = new SkartController();
+			player.VehicleAnimator = new SkartAnimator();
+			player.VehicleCamera = new SkartCamera();
 			player.Parent = this;
 			player.LocalPosition = Vector3.Up * 10;
 			player.LocalRotation = Rotation.Identity;

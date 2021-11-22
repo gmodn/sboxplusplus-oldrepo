@@ -1,7 +1,7 @@
 ﻿using Sandbox;
 using System.Linq;
 
-[Library( "generic_actor", Title = "Npc Test", Spawnable = true )]
+[Library( "npc_basic", Title = "Npc Test", Spawnable = true )]
 [Hammer.EditorModel( "models/citizen/citizen.vmdl" )]
 public partial class CAI_BaseNpc : AnimEntity
 {

@@ -29,7 +29,16 @@ public partial class SpawnMenu : Panel
 				tabs.SelectedButton = tabs.AddButtonActive( "Props", ( b ) => props.SetClass( "active", b ) );
 
 				var ents = body.AddChild<EntityList>();
-				tabs.AddButtonActive( "Entities", ( b ) => ents.SetClass( "active", b ) );
+				tabs.AddButtonActive( "All Entities", ( b ) => ents.SetClass( "active", b ) );
+
+				//var cars = body.AddChild<CarList>();
+				//tabs.AddButtonActive( "Cars", ( b ) => cars.SetClass( "active", b ) );
+
+				var wpn = body.AddChild<WeaponList>();
+				tabs.AddButtonActive( "Weapons", ( b ) => wpn.SetClass( "active", b ) );
+
+				var npc = body.AddChild<NpcList>();
+				tabs.AddButtonActive( "Npcs", ( b ) => npc.SetClass( "active", b ) );
 			}
 		}
 

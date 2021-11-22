@@ -100,6 +100,6 @@ public class InventoryBar : Panel
 
 		SetActiveSlot( input, inventory, nextSlot );
 
-		Sound.FromScreen("ui.button.over");
+		Sound.FromScreen( "ui.button.over" );
 	}
 }

@@ -73,7 +73,11 @@ public class Window : Panel
 		} );
 		Resizer.AddEventListener( "OnMouseUp", () => Resizing = false );
 
-		CloseButton.AddEventListener( "OnClick", () => Delete() );
+		CloseButton.AddEventListener( "OnClick", () =>
+		{
+			Delete();
+			Sound.FromScreen( "ui.button.over" );
+		} );
 	}
 
 	public void Center()

@@ -10,6 +10,12 @@ public class CButton : Button
 	{
 		Icon = Add.Image(IconPath, "icon");
 	}
+
+	protected override void OnClick( MousePanelEvent f )
+	{
+		base.OnClick( f );
+	    Sound.FromScreen("ui.button.press");
+	}
 }
 
 /*

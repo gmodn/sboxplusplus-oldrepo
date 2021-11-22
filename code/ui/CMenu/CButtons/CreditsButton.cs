@@ -16,11 +16,13 @@ public class CBCredits : CButton
 				current = Window.With( new Credits() )
 					.WithSize( 450, 500 )
 					.WithTitle( "Credits" )
-					.WithResizable( false );
+					.WithResizable( true );
 
 				CMenu.Current.AddChild( current );
 
 				current.Center();
+
+				Sound.FromScreen( "ui.popup.message.close" );
 			}
 			else current.Delete();
 		} );
