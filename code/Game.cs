@@ -3,6 +3,25 @@
 [Library( "sandbox", Title = "Sandbox" )]
 partial class SandboxGame : Game
 {
+
+	[ClientRpc]
+	public void PlaySoundFromScreen(string name, double x = 0.5, double y = 0.5)
+	{
+		Sound.FromScreen(name, (float)x, (float)y);
+	}
+
+	[ClientRpc]
+	public void PlaySoundFromWorld(string name, Vector3 position)
+	{
+		Sound.FromWorld(name, position);
+	}
+
+	[ClientRpc]
+	public void PlaySoundFromEntity(string name, Entity entity)
+	{
+		Sound.FromEntity(name, entity);
+	}
+
 	public SandboxGame()
 	{
 		if ( IsServer )

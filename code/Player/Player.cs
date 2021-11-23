@@ -4,6 +4,7 @@ partial class SandboxPlayer : Player
 {
 	private TimeSince timeSinceDropped;
 	private TimeSince timeSinceJumpReleased;
+	public float LastSpawnTime { get; private set; }
 
 	private DamageInfo lastDamage;
 
@@ -231,6 +232,19 @@ partial class SandboxPlayer : Player
 
 			break;
 		}
+	}
+
+	[ClientRpc]
+	public void DidDamage(Vector3 pos, float amount, float healthinv)
+	{
+		Sound.FromScreen("dm.ui_attacker")
+			.SetPitch(1 + healthinv * 1);
+	}
+
+	[ClientRpc]
+	public void TookDamage(Vector3 pos)
+	{
+		//DebugOverlay.Sphere( pos, 5.0f, Color.Red, false, 50.0f );
 	}
 
 	// TODO
