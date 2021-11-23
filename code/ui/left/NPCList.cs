@@ -25,13 +25,6 @@ public partial class NpcList : Panel
 			btn.Style.BackgroundImage = Texture.Load( $"/entity/{entry.Name}.png", false );
 		};
 
-		var npc = Library.GetAllAttributes<BaseNpc>().Where( x => x.Spawnable ).OrderBy( x => x.Title ).ToArray();
-
-		foreach ( var entry in npc )
-		{
-			Canvas.AddItem( entry );
-		};
-
 		LoadAllItem(false);
 	}
 
