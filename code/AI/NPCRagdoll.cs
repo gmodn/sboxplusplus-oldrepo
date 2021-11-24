@@ -53,24 +53,6 @@ public class ZombieRagdoll
 	[Event.Tick.Server]
 	public virtual void Tick()
 	{
-		var timeExisted = Time.Now - timeSpawned;
 
-		if ( timeExisted > fadeTime + fadeStartDelay )
-		{
-			Ragdoll.Delete();
-			return;
-		}
-
-		var alpha = timeExisted.LerpInverse( fadeStartDelay + fadeTime, fadeStartDelay );
-		var c = Ragdoll.RenderColor;
-		Ragdoll.RenderColor = new Color(c.r, c.g, c.b, alpha );
-		foreach ( Entity child in Ragdoll.Children )
-		{
-			if ( child is ModelEntity m )
-			{
-				var c2 = m.RenderColor;
-				m.RenderColor = new Color( c2.r, c2.g, c2.b, alpha );
-			}
-		}
 	}
 }

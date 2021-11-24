@@ -65,7 +65,7 @@ partial class SandboxPlayer
 
 		Corpse = ent;
 
-		//ent.DeleteAsync( 10.0f );
+		ent.DeleteAsync( 10.0f );
 	}
 
 	[ServerCmd( "committypekillinconsole", Help = "Explode yourself" )]
