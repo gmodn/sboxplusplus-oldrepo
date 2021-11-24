@@ -4,7 +4,7 @@
 	{
 		Model = resource:"models/sboxhardhatbase.vmdl"
 		MaterialGroup = "default"
-		Title = "s&box++ Developer Hat"
+		Title = "s&box++ Dev Cap"
 		Category = "1"
 		Subtitle = "Safety First!"
 		slotsunder = "2"

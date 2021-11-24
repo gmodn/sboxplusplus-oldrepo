@@ -10,7 +10,7 @@ public static class RandomClothes
 		"models/citizen_clothes/hat/hat_beret.black.vmdl",
 		"models/citizen_clothes/hat/hat_beret.red.vmdl",
 		"models/citizen_clothes/hat/hat_cap.vmdl",
-		"models/citizen_clothes/hat/hat_hardhat.vmdl",
+		"models/sboxhardhatbase.vmdl",
 		"models/citizen_clothes/hat/hat_leathercap.vmdl",
 		"models/citizen_clothes/hat/hat_leathercapnobadge.vmdl",
 		"models/citizen_clothes/hat/hat_securityhelmet.vmdl",
